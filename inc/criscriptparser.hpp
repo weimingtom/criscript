@@ -1,27 +1,37 @@
-/* A Bison parser, made by GNU Bison 2.1.  */
 
-/* Skeleton parser for Yacc-like parsing with Bison,
-   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005 Free Software Foundation, Inc.
+/* A Bison parser, made by GNU Bison 2.4.1.  */
 
-   This program is free software; you can redistribute it and/or modify
+/* Skeleton interface for Bison's Yacc-like parsers in C
+   
+      Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+   Free Software Foundation, Inc.
+   
+   This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
-   any later version.
-
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+   
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-
+   
    You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor,
-   Boston, MA 02110-1301, USA.  */
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
-/* As a special exception, when this file is copied by Bison into a
-   Bison output file, you may use that output file without restriction.
-   This special exception was added by the Free Software Foundation
-   in version 1.24 of Bison.  */
+/* As a special exception, you may create a larger work that contains
+   part or all of the Bison parser skeleton and distribute that work
+   under terms of your choice, so long as that work isn't itself a
+   parser generator using the skeleton or a modified version thereof
+   as a parser skeleton.  Alternatively, if you modify or redistribute
+   the parser skeleton itself, you may (at your option) remove this
+   special exception, which will cause the skeleton and the resulting
+   Bison output files to be licensed under the GNU General Public
+   License without this special exception.
+   
+   This special exception was added by the Free Software Foundation in
+   version 2.2 of Bison.  */
+
 
 /* Tokens.  */
 #ifndef YYTOKENTYPE
@@ -133,116 +143,16 @@
      TOKEN_UNINC = 359
    };
 #endif
-/* Tokens.  */
-#define TOKEN_ERROR 258
-#define TOKEN_LINETERM 259
-#define TOKEN_SEMICOLONAUTO 260
-#define TOKEN_BREAK 261
-#define TOKEN_ELSE 262
-#define TOKEN_NEW 263
-#define TOKEN_VAR 264
-#define TOKEN_CASE 265
-#define TOKEN_FINALLY 266
-#define TOKEN_RETURN 267
-#define TOKEN_VOID 268
-#define TOKEN_CATCH 269
-#define TOKEN_FOR 270
-#define TOKEN_SWITCH 271
-#define TOKEN_WHILE 272
-#define TOKEN_CONTINUE 273
-#define TOKEN_FUNCTION 274
-#define TOKEN_THIS 275
-#define TOKEN_WITH 276
-#define TOKEN_DEFAULT 277
-#define TOKEN_IF 278
-#define TOKEN_THROW 279
-#define TOKEN_DELETE 280
-#define TOKEN_IN 281
-#define TOKEN_TRY 282
-#define TOKEN_DO 283
-#define TOKEN_TYPEOF 284
-#define TOKEN_ATSET 285
-#define TOKEN_ATIF 286
-#define TOKEN_ATELIF 287
-#define TOKEN_ATELSE 288
-#define TOKEN_ATEND 289
-#define TOKEN_ATCC_ON 290
-#define TOKEN_IMPORT 291
-#define TOKEN_ABSTRACT 292
-#define TOKEN_ENUM 293
-#define TOKEN_INT 294
-#define TOKEN_SHORT 295
-#define TOKEN_BOOLEAN 296
-#define TOKEN_EXPORT 297
-#define TOKEN_INTERFACE 298
-#define TOKEN_STATIC 299
-#define TOKEN_BYTE 300
-#define TOKEN_EXTENDS 301
-#define TOKEN_LONG 302
-#define TOKEN_SUPER 303
-#define TOKEN_CHAR 304
-#define TOKEN_FINAL 305
-#define TOKEN_NATIVE 306
-#define TOKEN_SYNCHRONIZED 307
-#define TOKEN_CLASS 308
-#define TOKEN_FLOAT 309
-#define TOKEN_PACKAGE 310
-#define TOKEN_THROWS 311
-#define TOKEN_CONST 312
-#define TOKEN_GOTO 313
-#define TOKEN_PRIVATE 314
-#define TOKEN_TRANSIENT 315
-#define TOKEN_DEBUGGER 316
-#define TOKEN_IMPLEMENTS 317
-#define TOKEN_PROTECTED 318
-#define TOKEN_VOLATILE 319
-#define TOKEN_DOUBLE 320
-#define TOKEN_PUBLIC 321
-#define LITERAL_NULL 322
-#define LITERAL_UNDEFINED 323
-#define LITERAL_REGULAR_EXPRESSION 324
-#define LITERAL_BOOLEAN 325
-#define LITERAL_STRING 326
-#define LITERAL_INTEGER 327
-#define LITERAL_DECIMAL 328
-#define IDENTIFIER_NAME 329
-#define TOKEN_EOF 330
-#define TOKEN_RESTARG_PREFIX 331
-#define ATIDENTIFIER_NAME 332
-#define TOKEN_SHLASSIGNOP 333
-#define TOKEN_SHRUASSIGNOP 334
-#define TOKEN_SHRASSIGNOP 335
-#define TOKEN_MODASSIGNOP 336
-#define TOKEN_XORASSIGNOP 337
-#define TOKEN_ORASSIGNOP 338
-#define TOKEN_ANDASSIGNOP 339
-#define TOKEN_SUBASSIGNOP 340
-#define TOKEN_ADDASSIGNOP 341
-#define TOKEN_DIVASSIGNOP 342
-#define TOKEN_MULASSIGNOP 343
-#define TOKEN_LOGOR 344
-#define TOKEN_LOGAND 345
-#define TOKEN_NOTEQUALOP 346
-#define TOKEN_EQUALOP 347
-#define TOKEN_STRICTNOTEQUALOP 348
-#define TOKEN_STRICTEQUALOP 349
-#define TOKEN_INSTANCEOF 350
-#define TOKEN_LESSEQUAL 351
-#define TOKEN_LESS 352
-#define TOKEN_GREATEREQUAL 353
-#define TOKEN_GREATER 354
-#define TOKEN_SHIFTRIGHTUNSIGNED 355
-#define TOKEN_SHIFTRIGHT 356
-#define TOKEN_SHIFTLEFT 357
-#define TOKEN_UNDEC 358
-#define TOKEN_UNINC 359
 
 
 
+#if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
+typedef union YYSTYPE
+{
 
-#if ! defined (YYSTYPE) && ! defined (YYSTYPE_IS_DECLARED)
-#line 27 "..\\..\\..\\..\\src\\parser\\criscript.y"
-typedef union YYSTYPE {
+/* Line 1676 of yacc.c  */
+#line 27 "criscript.y"
+
 	struct {
 		union {
 			int64_t iValue;
@@ -257,15 +167,17 @@ typedef union YYSTYPE {
 		uint32_t iLineNumber;	//Linenumber of the token
 		uint32_t iColumn;		//Column of the token
 	};
+
+
+
+/* Line 1676 of yacc.c  */
+#line 175 "criscriptparser.hpp"
 } YYSTYPE;
-/* Line 1447 of yacc.c.  */
-#line 263 "..\\..\\..\\..\\src\\parser\\criscriptparser.hpp"
+# define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
-# define YYSTYPE_IS_TRIVIAL 1
 #endif
 
 extern YYSTYPE yylval;
-
 
 

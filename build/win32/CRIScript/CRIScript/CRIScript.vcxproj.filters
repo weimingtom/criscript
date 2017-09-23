@@ -1,0 +1,773 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\builtinObject">
+      <UniqueIdentifier>{08a151fa-dedd-444d-80f8-b6103334db8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\codeGen">
+      <UniqueIdentifier>{2444df6f-c047-43eb-b238-8bd1ec11b4d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\codeGen\Optimizer">
+      <UniqueIdentifier>{f8b74cac-0dd5-4e2f-93b9-97222912167b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\debugger">
+      <UniqueIdentifier>{b4505bda-4701-4e55-9535-fbab9adeadf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\misc">
+      <UniqueIdentifier>{dd424b2d-a9d7-4ea5-b0b1-e2b7538b135d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\vm">
+      <UniqueIdentifier>{6ffb119e-d5b7-411e-a7fc-b9d72414e156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\win32">
+      <UniqueIdentifier>{122deb75-d512-4fa6-bf63-94b8e9d83b44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\boost">
+      <UniqueIdentifier>{e718b642-75ec-4fd1-8304-908d89594dfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\boost\regex">
+      <UniqueIdentifier>{4f75bf52-ddd5-4671-bc91-292deb0f26b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\misc">
+      <UniqueIdentifier>{f3c1f2bd-69b1-4a2b-b172-c3a644d70af5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\codegen">
+      <UniqueIdentifier>{61aa25b9-792e-4fca-a2b9-fc23757035c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\vm">
+      <UniqueIdentifier>{edf0bfb8-8b4a-4c37-8cd9-8c3ade42d14a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\win32">
+      <UniqueIdentifier>{09ed0512-478d-4cc4-81ba-697f126ccf1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\builtinObject">
+      <UniqueIdentifier>{75d4b884-7299-42c4-9fe3-db082a40d7be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\debugger">
+      <UniqueIdentifier>{bc56f664-0178-49f5-bfc4-3ac469607b57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\boost">
+      <UniqueIdentifier>{5ae460ab-c576-491d-b75f-42246a2c472a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\boost\regex">
+      <UniqueIdentifier>{b3ac54ef-a5b1-4943-bd0a-0cffda1e13a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinArrayObject.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinBooleanObject.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinDateObject.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinDateObjectTimeZone.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinErrorObject.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinFunctionObject.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinMathObject.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinNumberObject.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinObjectObject.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinRegexObject.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinStringObject.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObject.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectForIn.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectGlobal.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectInstanceOf.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectLoadLiteral.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectObjectAccess.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectPropertyAccess.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectStrictCompare.cpp">
+      <Filter>Source Files\builtinObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilArgumentListStack.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilArrayLiteral.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilBuiltinObject.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilCodeGen.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilCodegenManagement.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilConditionalExpression.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilConstantBoolean.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilConstantFloat.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilConstantInteger.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilConstantLiteral.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilConstantRegex.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilExceptionHandling.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilExtensionManagement.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilFunctionCall.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilFunctionDeclaration.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilFunctionRet.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilFunctionVariables.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilIdentifier.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilLabel.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilLinkage.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilMetadata.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilMultipassControl.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilNodeTree.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilObjectInformation.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilObjectLiteral.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOpcode.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorAdd.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorBitwiseAnd.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorBitwiseOr.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorBitwiseShiftLeft.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorBitwiseShiftRight.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorBitwiseShiftRightUnsigned.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorBitwiseXor.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorCompare.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorCompareStrict.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorDivision.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorIn.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorInstanceOf.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorLogicalAnd.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorLogicalOr.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorMultiply.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorNew.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorReminder.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorSubtract.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryBitwiseNot.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryDelete.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryIncrement.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryLogicalNot.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryMinus.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryPlus.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryTypeof.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryVoid.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilProperty.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilScope.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementBreak.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementExpression.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementFor.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementForIn.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementIf.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementSwitch.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementWith.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilSymbolInfo.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilTemporaryVariables.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilVariableAssignment.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilVariableDeclaration.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Parser\criscriptparser.cpp">
+      <Filter>Source Files\codeGen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOptimizerConditionalBranch.cpp">
+      <Filter>Source Files\codeGen\Optimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOptimizerRedandantDup.cpp">
+      <Filter>Source Files\codeGen\Optimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOptimizerSfldIncrement.cpp">
+      <Filter>Source Files\codeGen\Optimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilPeepholeOptimizer.cpp">
+      <Filter>Source Files\codeGen\Optimizer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Debugger\cil\cilDebuggerDisasm.cpp">
+      <Filter>Source Files\debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Debugger\cil\cilDebuggerDump.cpp">
+      <Filter>Source Files\debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Debugger\cil\cilDebuggerVMInterface.cpp">
+      <Filter>Source Files\debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Parser\Error.cpp">
+      <Filter>Source Files\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Parser\filestreamlexer.cpp">
+      <Filter>Source Files\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Parser\Lexer.cpp">
+      <Filter>Source Files\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Parser\onmemorylexer.cpp">
+      <Filter>Source Files\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Parser\Parser.cpp">
+      <Filter>Source Files\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Parser\Variable.cpp">
+      <Filter>Source Files\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVM.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMArgumentList.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMBind.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMConversion.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMDebugInfo.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMEvalStack.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMExceptionHandling.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMGarbageCollector.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMHandler.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMILPool.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMInitialization.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMInvokeMethod.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMLocalVariable.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMMiscAPI.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMObject.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMObjectCreation.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorAdd.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBeq.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBge.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBgt.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBitwiseAnd.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBitwiseNot.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBitwiseOr.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBitwiseXor.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBle.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBlt.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBne.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBrFalse.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBrTrue.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorCall.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorCeq.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorCgt.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorClt.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorDivision.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorExtCge.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorExtCle.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorExtCne.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorIncDec.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorMultiply.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorNeg.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorReminder.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorShl.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorShr.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorShrUn.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorSubtract.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMPrototypeObject.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMStaticField.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMThreadedDispatcher.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMToken.cpp">
+      <Filter>Source Files\vm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\Win32\StopWatch.cpp">
+      <Filter>Source Files\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\c_regex_traits.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\cpp_regex_traits.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\cregex.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\fileiter.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\icu.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\instances.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\posix_api.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\regex.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\regex_debug.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\regex_raw_buffer.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\regex_traits_defaults.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\static_mutex.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\usinstances.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\w32_regex_traits.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\wc_regex_traits.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\wide_posix_api.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\winstances.cpp">
+      <Filter>Source Files\boost\regex</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\VM\cil\cilVMBranchMacro.h">
+      <Filter>Source Files\vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\criscript.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\versions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\cilErrorDef_English.h">
+      <Filter>Header Files\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Error.h">
+      <Filter>Header Files\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\lexer.h">
+      <Filter>Header Files\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\stdint.h">
+      <Filter>Header Files\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Variable.h">
+      <Filter>Header Files\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\cilCodegen.h">
+      <Filter>Header Files\codegen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\cilOpcode.h">
+      <Filter>Header Files\codegen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\icodegen.h">
+      <Filter>Header Files\codegen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\parser.h">
+      <Filter>Header Files\codegen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\cilVm.h">
+      <Filter>Header Files\vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\vmRuntimeError.h">
+      <Filter>Header Files\vm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\Win32\StopWatch.h">
+      <Filter>Header Files\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\cilBuiltinObject.h">
+      <Filter>Header Files\builtinObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\cilDebugger.h">
+      <Filter>Header Files\debugger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\inc\IDebugger.h">
+      <Filter>Header Files\debugger</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\basic_regex.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\basic_regex_creator.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\basic_regex_parser.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\c_regex_traits.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\char_regex_traits.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\cpp_regex_traits.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\cregex.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\error_type.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\fileiter.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\instances.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\iterator_category.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\iterator_traits.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\match_flags.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\match_results.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\mem_block_cache.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\perl_matcher.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\perl_matcher_common.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\perl_matcher_non_recursive.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\perl_matcher_recursive.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\primary_transform.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\protected_call.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regbase.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_cstring.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_format.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_fwd.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_grep.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_iterator.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_kmp.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_match.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_merge.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_raw_buffer.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_replace.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_search.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_split.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_stack.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_token_iterator.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_traits.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_traits_defaults.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_workaround.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\states.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\sub_match.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\syntax_type.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\u32regex_iterator.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\u32regex_token_iterator.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\w32_regex_traits.hpp">
+      <Filter>Header Files\boost\regex</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\..\src\Parser\criscript.y">
+      <Filter>Source Files\codeGen</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

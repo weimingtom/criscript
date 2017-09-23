@@ -27,6 +27,11 @@
 #include <boost/detail/interlocked.hpp>
 #include <boost/detail/workaround.hpp>
 #include <typeinfo>
+#ifdef _MSC_VER
+namespace std {
+	typedef ::type_info type_info;
+}
+#endif
 
 namespace boost
 {

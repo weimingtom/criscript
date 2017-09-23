@@ -1,30 +1,39 @@
-/* A Bison parser, made by GNU Bison 2.1.  */
 
-/* Skeleton parser for Yacc-like parsing with Bison,
-   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005 Free Software Foundation, Inc.
+/* A Bison parser, made by GNU Bison 2.4.1.  */
 
-   This program is free software; you can redistribute it and/or modify
+/* Skeleton implementation for Bison's Yacc-like parsers in C
+   
+      Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+   Free Software Foundation, Inc.
+   
+   This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
-   any later version.
-
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+   
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-
+   
    You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor,
-   Boston, MA 02110-1301, USA.  */
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
-/* As a special exception, when this file is copied by Bison into a
-   Bison output file, you may use that output file without restriction.
-   This special exception was added by the Free Software Foundation
-   in version 1.24 of Bison.  */
+/* As a special exception, you may create a larger work that contains
+   part or all of the Bison parser skeleton and distribute that work
+   under terms of your choice, so long as that work isn't itself a
+   parser generator using the skeleton or a modified version thereof
+   as a parser skeleton.  Alternatively, if you modify or redistribute
+   the parser skeleton itself, you may (at your option) remove this
+   special exception, which will cause the skeleton and the resulting
+   Bison output files to be licensed under the GNU General Public
+   License without this special exception.
+   
+   This special exception was added by the Free Software Foundation in
+   version 2.2 of Bison.  */
 
-/* Written by Richard Stallman by simplifying the original so called
-   ``semantic'' parser.  */
+/* C LALR(1) parser skeleton written by Richard Stallman, by
+   simplifying the original so-called "semantic" parser.  */
 
 /* All symbols defined below should begin with yy or YY, to avoid
    infringing on user name space.  This should be done even for local
@@ -37,7 +46,7 @@
 #define YYBISON 1
 
 /* Bison version.  */
-#define YYBISON_VERSION "2.1"
+#define YYBISON_VERSION "2.4.1"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -45,9 +54,67 @@
 /* Pure parsers.  */
 #define YYPURE 0
 
+/* Push parsers.  */
+#define YYPUSH 0
+
+/* Pull parsers.  */
+#define YYPULL 1
+
 /* Using locations.  */
 #define YYLSP_NEEDED 0
 
+
+
+/* Copy the first part of user declarations.  */
+
+/* Line 189 of yacc.c  */
+#line 1 "criscript.y"
+
+//    Copyright (c) 2007 CRI Middleware inc.  All rights reserved.
+#include "stdafx.h"
+#include "criScript.h"
+#include "parser.h"
+#include "cilCodeGen.h"
+#include "cilVm.h"
+
+namespace cri {
+#define YYMAXDEPTH 65535
+extern "C" {
+int32_t yylex( void );
+void yyerror( char *pMessage);
+}
+
+using namespace cri;
+
+#ifdef DEBUG_PARSING
+#define dbgprint(x)     printf x
+#define YYDEBUG 1
+#else
+#define dbgprint(x)     
+#endif
+ 
+
+
+/* Line 189 of yacc.c  */
+#line 100 "criscriptparser.cpp"
+
+/* Enabling traces.  */
+#ifndef YYDEBUG
+# define YYDEBUG 0
+#endif
+
+/* Enabling verbose error messages.  */
+#ifdef YYERROR_VERBOSE
+# undef YYERROR_VERBOSE
+# define YYERROR_VERBOSE 1
+#else
+# define YYERROR_VERBOSE 0
+#endif
+
+/* Enabling the token table.  */
+#ifndef YYTOKEN_TABLE
+# define YYTOKEN_TABLE 0
+#endif
 
 
 /* Tokens.  */
@@ -160,162 +227,16 @@
      TOKEN_UNINC = 359
    };
 #endif
-/* Tokens.  */
-#define TOKEN_ERROR 258
-#define TOKEN_LINETERM 259
-#define TOKEN_SEMICOLONAUTO 260
-#define TOKEN_BREAK 261
-#define TOKEN_ELSE 262
-#define TOKEN_NEW 263
-#define TOKEN_VAR 264
-#define TOKEN_CASE 265
-#define TOKEN_FINALLY 266
-#define TOKEN_RETURN 267
-#define TOKEN_VOID 268
-#define TOKEN_CATCH 269
-#define TOKEN_FOR 270
-#define TOKEN_SWITCH 271
-#define TOKEN_WHILE 272
-#define TOKEN_CONTINUE 273
-#define TOKEN_FUNCTION 274
-#define TOKEN_THIS 275
-#define TOKEN_WITH 276
-#define TOKEN_DEFAULT 277
-#define TOKEN_IF 278
-#define TOKEN_THROW 279
-#define TOKEN_DELETE 280
-#define TOKEN_IN 281
-#define TOKEN_TRY 282
-#define TOKEN_DO 283
-#define TOKEN_TYPEOF 284
-#define TOKEN_ATSET 285
-#define TOKEN_ATIF 286
-#define TOKEN_ATELIF 287
-#define TOKEN_ATELSE 288
-#define TOKEN_ATEND 289
-#define TOKEN_ATCC_ON 290
-#define TOKEN_IMPORT 291
-#define TOKEN_ABSTRACT 292
-#define TOKEN_ENUM 293
-#define TOKEN_INT 294
-#define TOKEN_SHORT 295
-#define TOKEN_BOOLEAN 296
-#define TOKEN_EXPORT 297
-#define TOKEN_INTERFACE 298
-#define TOKEN_STATIC 299
-#define TOKEN_BYTE 300
-#define TOKEN_EXTENDS 301
-#define TOKEN_LONG 302
-#define TOKEN_SUPER 303
-#define TOKEN_CHAR 304
-#define TOKEN_FINAL 305
-#define TOKEN_NATIVE 306
-#define TOKEN_SYNCHRONIZED 307
-#define TOKEN_CLASS 308
-#define TOKEN_FLOAT 309
-#define TOKEN_PACKAGE 310
-#define TOKEN_THROWS 311
-#define TOKEN_CONST 312
-#define TOKEN_GOTO 313
-#define TOKEN_PRIVATE 314
-#define TOKEN_TRANSIENT 315
-#define TOKEN_DEBUGGER 316
-#define TOKEN_IMPLEMENTS 317
-#define TOKEN_PROTECTED 318
-#define TOKEN_VOLATILE 319
-#define TOKEN_DOUBLE 320
-#define TOKEN_PUBLIC 321
-#define LITERAL_NULL 322
-#define LITERAL_UNDEFINED 323
-#define LITERAL_REGULAR_EXPRESSION 324
-#define LITERAL_BOOLEAN 325
-#define LITERAL_STRING 326
-#define LITERAL_INTEGER 327
-#define LITERAL_DECIMAL 328
-#define IDENTIFIER_NAME 329
-#define TOKEN_EOF 330
-#define TOKEN_RESTARG_PREFIX 331
-#define ATIDENTIFIER_NAME 332
-#define TOKEN_SHLASSIGNOP 333
-#define TOKEN_SHRUASSIGNOP 334
-#define TOKEN_SHRASSIGNOP 335
-#define TOKEN_MODASSIGNOP 336
-#define TOKEN_XORASSIGNOP 337
-#define TOKEN_ORASSIGNOP 338
-#define TOKEN_ANDASSIGNOP 339
-#define TOKEN_SUBASSIGNOP 340
-#define TOKEN_ADDASSIGNOP 341
-#define TOKEN_DIVASSIGNOP 342
-#define TOKEN_MULASSIGNOP 343
-#define TOKEN_LOGOR 344
-#define TOKEN_LOGAND 345
-#define TOKEN_NOTEQUALOP 346
-#define TOKEN_EQUALOP 347
-#define TOKEN_STRICTNOTEQUALOP 348
-#define TOKEN_STRICTEQUALOP 349
-#define TOKEN_INSTANCEOF 350
-#define TOKEN_LESSEQUAL 351
-#define TOKEN_LESS 352
-#define TOKEN_GREATEREQUAL 353
-#define TOKEN_GREATER 354
-#define TOKEN_SHIFTRIGHTUNSIGNED 355
-#define TOKEN_SHIFTRIGHT 356
-#define TOKEN_SHIFTLEFT 357
-#define TOKEN_UNDEC 358
-#define TOKEN_UNINC 359
 
 
 
+#if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
+typedef union YYSTYPE
+{
 
-/* Copy the first part of user declarations.  */
-#line 1 "..\\..\\..\\..\\src\\parser\\criscript.y"
+/* Line 214 of yacc.c  */
+#line 27 "criscript.y"
 
-//    Copyright (c) 2007 CRI Middleware inc.  All rights reserved.
-#include "stdafx.h"
-#include "criScript.h"
-#include "parser.h"
-#include "cilCodeGen.h"
-#include "cilVm.h"
-
-namespace cri {
-#define YYMAXDEPTH 65535
-extern "C" {
-int32_t yylex( void );
-void yyerror( char *pMessage);
-}
-
-using namespace cri;
-
-#ifdef DEBUG_PARSING
-#define dbgprint(x)     printf x
-#define YYDEBUG 1
-#else
-#define dbgprint(x)     
-#endif
- 
-
-
-/* Enabling traces.  */
-#ifndef YYDEBUG
-# define YYDEBUG 0
-#endif
-
-/* Enabling verbose error messages.  */
-#ifdef YYERROR_VERBOSE
-# undef YYERROR_VERBOSE
-# define YYERROR_VERBOSE 1
-#else
-# define YYERROR_VERBOSE 0
-#endif
-
-/* Enabling the token table.  */
-#ifndef YYTOKEN_TABLE
-# define YYTOKEN_TABLE 0
-#endif
-
-#if ! defined (YYSTYPE) && ! defined (YYSTYPE_IS_DECLARED)
-#line 27 "..\\..\\..\\..\\src\\parser\\criscript.y"
-typedef union YYSTYPE {
 	struct {
 		union {
 			int64_t iValue;
@@ -330,35 +251,70 @@ typedef union YYSTYPE {
 		uint32_t iLineNumber;	//Linenumber of the token
 		uint32_t iColumn;		//Column of the token
 	};
+
+
+
+/* Line 214 of yacc.c  */
+#line 259 "criscriptparser.cpp"
 } YYSTYPE;
-/* Line 196 of yacc.c.  */
-#line 336 "..\\..\\..\\..\\src\\parser\\criscriptparser.cpp"
+# define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
-# define YYSTYPE_IS_TRIVIAL 1
 #endif
-
 
 
 /* Copy the second part of user declarations.  */
 
 
-/* Line 219 of yacc.c.  */
-#line 348 "..\\..\\..\\..\\src\\parser\\criscriptparser.cpp"
+/* Line 264 of yacc.c  */
+#line 271 "criscriptparser.cpp"
 
-#if ! defined (YYSIZE_T) && defined (__SIZE_TYPE__)
-# define YYSIZE_T __SIZE_TYPE__
+#ifdef short
+# undef short
 #endif
-#if ! defined (YYSIZE_T) && defined (size_t)
-# define YYSIZE_T size_t
+
+#ifdef YYTYPE_UINT8
+typedef YYTYPE_UINT8 yytype_uint8;
+#else
+typedef unsigned char yytype_uint8;
 #endif
-#if ! defined (YYSIZE_T) && (defined (__STDC__) || defined (__cplusplus))
-# include <stddef.h> /* INFRINGES ON USER NAME SPACE */
-# define YYSIZE_T size_t
+
+#ifdef YYTYPE_INT8
+typedef YYTYPE_INT8 yytype_int8;
+#elif (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
+typedef signed char yytype_int8;
+#else
+typedef short int yytype_int8;
 #endif
-#if ! defined (YYSIZE_T)
-# define YYSIZE_T unsigned int
+
+#ifdef YYTYPE_UINT16
+typedef YYTYPE_UINT16 yytype_uint16;
+#else
+typedef unsigned short int yytype_uint16;
 #endif
+
+#ifdef YYTYPE_INT16
+typedef YYTYPE_INT16 yytype_int16;
+#else
+typedef short int yytype_int16;
+#endif
+
+#ifndef YYSIZE_T
+# ifdef __SIZE_TYPE__
+#  define YYSIZE_T __SIZE_TYPE__
+# elif defined size_t
+#  define YYSIZE_T size_t
+# elif ! defined YYSIZE_T && (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
+#  include <stddef.h> /* INFRINGES ON USER NAME SPACE */
+#  define YYSIZE_T size_t
+# else
+#  define YYSIZE_T unsigned int
+# endif
+#endif
+
+#define YYSIZE_MAXIMUM ((YYSIZE_T) -1)
 
 #ifndef YY_
 # if YYENABLE_NLS
@@ -372,7 +328,32 @@ typedef union YYSTYPE {
 # endif
 #endif
 
-#if ! defined (yyoverflow) || YYERROR_VERBOSE
+/* Suppress unused-variable warnings by "using" E.  */
+#if ! defined lint || defined __GNUC__
+# define YYUSE(e) ((void) (e))
+#else
+# define YYUSE(e) /* empty */
+#endif
+
+/* Identity function, used to suppress warnings about constant conditions.  */
+#ifndef lint
+# define YYID(n) (n)
+#else
+#if (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
+static int
+YYID (int yyi)
+#else
+static int
+YYID (yyi)
+    int yyi;
+#endif
+{
+  return yyi;
+}
+#endif
+
+#if ! defined yyoverflow || YYERROR_VERBOSE
 
 /* The parser invokes alloca or malloc; define the necessary symbols.  */
 
@@ -380,66 +361,78 @@ typedef union YYSTYPE {
 #  if YYSTACK_USE_ALLOCA
 #   ifdef __GNUC__
 #    define YYSTACK_ALLOC __builtin_alloca
+#   elif defined __BUILTIN_VA_ARG_INCR
+#    include <alloca.h> /* INFRINGES ON USER NAME SPACE */
+#   elif defined _AIX
+#    define YYSTACK_ALLOC __alloca
+#   elif defined _MSC_VER
+#    include <malloc.h> /* INFRINGES ON USER NAME SPACE */
+#    define alloca _alloca
 #   else
 #    define YYSTACK_ALLOC alloca
-#    if defined (__STDC__) || defined (__cplusplus)
+#    if ! defined _ALLOCA_H && ! defined _STDLIB_H && (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
 #     include <stdlib.h> /* INFRINGES ON USER NAME SPACE */
-#     define YYINCLUDED_STDLIB_H
+#     ifndef _STDLIB_H
+#      define _STDLIB_H 1
+#     endif
 #    endif
 #   endif
 #  endif
 # endif
 
 # ifdef YYSTACK_ALLOC
-   /* Pacify GCC's `empty if-body' warning. */
-#  define YYSTACK_FREE(Ptr) do { /* empty */; } while (0)
+   /* Pacify GCC's `empty if-body' warning.  */
+#  define YYSTACK_FREE(Ptr) do { /* empty */; } while (YYID (0))
 #  ifndef YYSTACK_ALLOC_MAXIMUM
     /* The OS might guarantee only one guard page at the bottom of the stack,
        and a page size can be as small as 4096 bytes.  So we cannot safely
        invoke alloca (N) if N exceeds 4096.  Use a slightly smaller number
        to allow for a few compiler-allocated temporary stack slots.  */
-#   define YYSTACK_ALLOC_MAXIMUM 4032 /* reasonable circa 2005 */
+#   define YYSTACK_ALLOC_MAXIMUM 4032 /* reasonable circa 2006 */
 #  endif
 # else
 #  define YYSTACK_ALLOC YYMALLOC
 #  define YYSTACK_FREE YYFREE
 #  ifndef YYSTACK_ALLOC_MAXIMUM
-#   define YYSTACK_ALLOC_MAXIMUM ((YYSIZE_T) -1)
+#   define YYSTACK_ALLOC_MAXIMUM YYSIZE_MAXIMUM
 #  endif
-#  ifdef __cplusplus
-extern "C" {
+#  if (defined __cplusplus && ! defined _STDLIB_H \
+       && ! ((defined YYMALLOC || defined malloc) \
+	     && (defined YYFREE || defined free)))
+#   include <stdlib.h> /* INFRINGES ON USER NAME SPACE */
+#   ifndef _STDLIB_H
+#    define _STDLIB_H 1
+#   endif
 #  endif
 #  ifndef YYMALLOC
 #   define YYMALLOC malloc
-#   if (! defined (malloc) && ! defined (YYINCLUDED_STDLIB_H) \
-	&& (defined (__STDC__) || defined (__cplusplus)))
+#   if ! defined malloc && ! defined _STDLIB_H && (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
 void *malloc (YYSIZE_T); /* INFRINGES ON USER NAME SPACE */
 #   endif
 #  endif
 #  ifndef YYFREE
 #   define YYFREE free
-#   if (! defined (free) && ! defined (YYINCLUDED_STDLIB_H) \
-	&& (defined (__STDC__) || defined (__cplusplus)))
+#   if ! defined free && ! defined _STDLIB_H && (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
 void free (void *); /* INFRINGES ON USER NAME SPACE */
 #   endif
 #  endif
-#  ifdef __cplusplus
-}
-#  endif
 # endif
-#endif /* ! defined (yyoverflow) || YYERROR_VERBOSE */
+#endif /* ! defined yyoverflow || YYERROR_VERBOSE */
 
 
-#if (! defined (yyoverflow) \
-     && (! defined (__cplusplus) \
-	 || (defined (YYSTYPE_IS_TRIVIAL) && YYSTYPE_IS_TRIVIAL)))
+#if (! defined yyoverflow \
+     && (! defined __cplusplus \
+	 || (defined YYSTYPE_IS_TRIVIAL && YYSTYPE_IS_TRIVIAL)))
 
 /* A type that is properly aligned for any stack member.  */
 union yyalloc
 {
-  short int yyss;
-  YYSTYPE yyvs;
-  };
+  yytype_int16 yyss_alloc;
+  YYSTYPE yyvs_alloc;
+};
 
 /* The size of the maximum gap between one aligned stack and the next.  */
 # define YYSTACK_GAP_MAXIMUM (sizeof (union yyalloc) - 1)
@@ -447,13 +440,13 @@ union yyalloc
 /* The size of an array large to enough to hold all stacks, each with
    N elements.  */
 # define YYSTACK_BYTES(N) \
-     ((N) * (sizeof (short int) + sizeof (YYSTYPE))			\
+     ((N) * (sizeof (yytype_int16) + sizeof (YYSTYPE)) \
       + YYSTACK_GAP_MAXIMUM)
 
 /* Copy COUNT objects from FROM to TO.  The source and destination do
    not overlap.  */
 # ifndef YYCOPY
-#  if defined (__GNUC__) && 1 < __GNUC__
+#  if defined __GNUC__ && 1 < __GNUC__
 #   define YYCOPY(To, From, Count) \
       __builtin_memcpy (To, From, (Count) * sizeof (*(From)))
 #  else
@@ -464,7 +457,7 @@ union yyalloc
 	  for (yyi = 0; yyi < (Count); yyi++)	\
 	    (To)[yyi] = (From)[yyi];		\
 	}					\
-      while (0)
+      while (YYID (0))
 #  endif
 # endif
 
@@ -473,37 +466,31 @@ union yyalloc
    elements in the stack, and YYPTR gives the new location of the
    stack.  Advance YYPTR to a properly aligned location for the next
    stack.  */
-# define YYSTACK_RELOCATE(Stack)					\
+# define YYSTACK_RELOCATE(Stack_alloc, Stack)				\
     do									\
       {									\
 	YYSIZE_T yynewbytes;						\
-	YYCOPY (&yyptr->Stack, Stack, yysize);				\
-	Stack = &yyptr->Stack;						\
+	YYCOPY (&yyptr->Stack_alloc, Stack, yysize);			\
+	Stack = &yyptr->Stack_alloc;					\
 	yynewbytes = yystacksize * sizeof (*Stack) + YYSTACK_GAP_MAXIMUM; \
 	yyptr += yynewbytes / sizeof (*yyptr);				\
       }									\
-    while (0)
+    while (YYID (0))
 
 #endif
 
-#if defined (__STDC__) || defined (__cplusplus)
-   typedef signed char yysigned_char;
-#else
-   typedef short int yysigned_char;
-#endif
-
-/* YYFINAL -- State number of the termination state. */
+/* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  153
 /* YYLAST -- Last index in YYTABLE.  */
 #define YYLAST   3221
 
-/* YYNTOKENS -- Number of terminals. */
+/* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  127
-/* YYNNTS -- Number of nonterminals. */
+/* YYNNTS -- Number of nonterminals.  */
 #define YYNNTS  128
-/* YYNRULES -- Number of rules. */
+/* YYNRULES -- Number of rules.  */
 #define YYNRULES  334
-/* YYNRULES -- Number of states. */
+/* YYNRULES -- Number of states.  */
 #define YYNSTATES  584
 
 /* YYTRANSLATE(YYLEX) -- Bison symbol number corresponding to YYLEX.  */
@@ -514,7 +501,7 @@ union yyalloc
   ((unsigned int) (YYX) <= YYMAXUTOK ? yytranslate[YYX] : YYUNDEFTOK)
 
 /* YYTRANSLATE[YYLEX] -- Bison symbol number corresponding to YYLEX.  */
-static const unsigned char yytranslate[] =
+static const yytype_uint8 yytranslate[] =
 {
        0,     2,     2,     2,     2,     2,     2,     2,     2,     2,
        2,     2,     2,     2,     2,     2,     2,     2,     2,     2,
@@ -557,7 +544,7 @@ static const unsigned char yytranslate[] =
 #if YYDEBUG
 /* YYPRHS[YYN] -- Index of the first RHS symbol of rule number YYN in
    YYRHS.  */
-static const unsigned short int yyprhs[] =
+static const yytype_uint16 yyprhs[] =
 {
        0,     0,     3,     6,     9,    11,    13,    15,    17,    19,
       23,    25,    27,    29,    31,    33,    35,    37,    39,    41,
@@ -595,8 +582,8 @@ static const unsigned short int yyprhs[] =
     1068,  1070,  1074,  1076,  1080
 };
 
-/* YYRHS -- A `-1'-separated list of the rules' RHS. */
-static const short int yyrhs[] =
+/* YYRHS -- A `-1'-separated list of the rules' RHS.  */
+static const yytype_int16 yyrhs[] =
 {
      128,     0,    -1,   129,    75,    -1,   129,   130,    -1,   130,
       -1,   219,    -1,   178,    -1,    20,    -1,   137,    -1,   118,
@@ -710,7 +697,7 @@ static const short int yyrhs[] =
 };
 
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
-static const unsigned short int yyrline[] =
+static const yytype_uint16 yyrline[] =
 {
        0,   265,   265,   277,   281,   286,   299,   313,   318,   323,
      328,   333,   338,   344,   349,   354,   359,   364,   369,   374,
@@ -751,7 +738,7 @@ static const unsigned short int yyrline[] =
 
 #if YYDEBUG || YYERROR_VERBOSE || YYTOKEN_TABLE
 /* YYTNAME[SYMBOL-NUM] -- String name of the symbol SYMBOL-NUM.
-   First, the terminals, then, starting at YYNTOKENS, nonterminals. */
+   First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
   "$end", "error", "$undefined", "TOKEN_ERROR", "TOKEN_LINETERM",
@@ -803,38 +790,38 @@ static const char *const yytname[] =
   "ConditionalExpressionNoIn", "AssignmentExpression",
   "AssignmentExpressionNoIn", "ExpressionOpt", "Expression",
   "ExpressionNoInOpt", "ExpressionNoIn", "Statement", "Block",
-  "StatementList", "VariableStatement", "@1", "VariableDeclarationList",
+  "StatementList", "VariableStatement", "$@1", "VariableDeclarationList",
   "VariableDeclarationListNoIn", "variableDeclaration", "InitialiserOpt",
   "ArrayTypedIdentifier", "TypedIdentifier", "VariableDeclarationNoIn",
   "InitialiserNoInOpt", "Initialiser", "InitialiserNoIn", "EmptyStatement",
-  "expressionStatement", "@2", "ifStatement", "ElseStatementOpt",
-  "IterationStatement", "continueStatement", "@3", "breakStatement", "@4",
-  "returnStatement", "@5", "withStatement", "switchStatement", "CaseBlock",
-  "CaseClauses", "caseClause", "DefaultClause", "LabelledStatement",
-  "throwStatement", "@6", "TryStatement", "Catch", "Finally",
-  "FunctionSourceElements", "FunctionSourceElement", "functionDeclaration",
-  "FunctionExpression", "FormalParameterList", "Identifiers",
-  "FunctionBody", "SemiColon", "LiteralString", "LiteralInteger",
-  "LiteralFloat", "identifier", "LiteralBoolean", "LiteralRegex", "@7",
-  "Extension_ImportStatement", "Extension_ImportComponent",
-  "Extension_AtCcOnStatement", "StatementListOpt",
-  "Extension_AtIfStatement", "Extension_AtElifStatement",
-  "Extension_AtElseStatementOpt", "Extension_AtLiteral",
-  "Extension_AtIdentifier", "Extension_AtPrimaryExpression",
-  "Extension_AtSetStatement", "Extension_AtunaryExpression",
-  "Extension_AtMultiplicativeExpression", "Extension_AtAdditiveExpression",
-  "Extension_AtshiftExpression", "Extension_AtRelationalExpression",
-  "Extension_AtEqualityExpression", "Extension_AtbitwiseANDExpression",
-  "Extension_AtbitwiseXORExpression", "Extension_AtbitwiseORExpression",
-  "Extension_AtlogicalANDExpression", "Extension_AtlogicalORExpression",
-  "Extension_AtExpression", 0
+  "expressionStatement", "$@2", "ifStatement", "ElseStatementOpt",
+  "IterationStatement", "continueStatement", "$@3", "breakStatement",
+  "$@4", "returnStatement", "$@5", "withStatement", "switchStatement",
+  "CaseBlock", "CaseClauses", "caseClause", "DefaultClause",
+  "LabelledStatement", "throwStatement", "$@6", "TryStatement", "Catch",
+  "Finally", "FunctionSourceElements", "FunctionSourceElement",
+  "functionDeclaration", "FunctionExpression", "FormalParameterList",
+  "Identifiers", "FunctionBody", "SemiColon", "LiteralString",
+  "LiteralInteger", "LiteralFloat", "identifier", "LiteralBoolean",
+  "LiteralRegex", "$@7", "Extension_ImportStatement",
+  "Extension_ImportComponent", "Extension_AtCcOnStatement",
+  "StatementListOpt", "Extension_AtIfStatement",
+  "Extension_AtElifStatement", "Extension_AtElseStatementOpt",
+  "Extension_AtLiteral", "Extension_AtIdentifier",
+  "Extension_AtPrimaryExpression", "Extension_AtSetStatement",
+  "Extension_AtunaryExpression", "Extension_AtMultiplicativeExpression",
+  "Extension_AtAdditiveExpression", "Extension_AtshiftExpression",
+  "Extension_AtRelationalExpression", "Extension_AtEqualityExpression",
+  "Extension_AtbitwiseANDExpression", "Extension_AtbitwiseXORExpression",
+  "Extension_AtbitwiseORExpression", "Extension_AtlogicalANDExpression",
+  "Extension_AtlogicalORExpression", "Extension_AtExpression", 0
 };
 #endif
 
 # ifdef YYPRINT
 /* YYTOKNUM[YYLEX-NUM] -- Internal token number corresponding to
    token YYLEX-NUM.  */
-static const unsigned short int yytoknum[] =
+static const yytype_uint16 yytoknum[] =
 {
        0,   256,   257,   258,   259,   260,   261,   262,   263,   264,
      265,   266,   267,   268,   269,   270,   271,   272,   273,   274,
@@ -853,7 +840,7 @@ static const unsigned short int yytoknum[] =
 # endif
 
 /* YYR1[YYN] -- Symbol number of symbol that rule YYN derives.  */
-static const unsigned char yyr1[] =
+static const yytype_uint8 yyr1[] =
 {
        0,   127,   128,   129,   129,   130,   130,   131,   131,   131,
      131,   131,   131,   132,   132,   132,   132,   132,   132,   132,
@@ -892,7 +879,7 @@ static const unsigned char yyr1[] =
 };
 
 /* YYR2[YYN] -- Number of symbols composing right hand side of rule YYN.  */
-static const unsigned char yyr2[] =
+static const yytype_uint8 yyr2[] =
 {
        0,     2,     2,     2,     1,     1,     1,     1,     1,     3,
        1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
@@ -933,7 +920,7 @@ static const unsigned char yyr2[] =
 /* YYDEFACT[STATE-NAME] -- Default rule to reduce with in state
    STATE-NUM when YYTABLE doesn't specify something else to do.  Zero
    means the default is an error.  */
-static const unsigned short int yydefact[] =
+static const yytype_uint16 yydefact[] =
 {
        0,     0,    20,   277,     0,   164,   277,     0,     0,     0,
       20,    20,     7,     0,     0,   277,   277,     0,     0,   277,
@@ -996,8 +983,8 @@ static const unsigned short int yydefact[] =
        0,   288,   206,   287
 };
 
-/* YYDEFGOTO[NTERM-NUM]. */
-static const short int yydefgoto[] =
+/* YYDEFGOTO[NTERM-NUM].  */
+static const yytype_int16 yydefgoto[] =
 {
       -1,    41,    42,    43,    44,    45,   117,    46,   139,   140,
       47,   143,   283,   144,   145,    48,    49,   220,    50,   222,
@@ -1017,7 +1004,7 @@ static const short int yydefgoto[] =
 /* YYPACT[STATE-NUM] -- Index in YYTABLE of the portion describing
    STATE-NUM.  */
 #define YYPACT_NINF -460
-static const short int yypact[] =
+static const yytype_int16 yypact[] =
 {
     2471,   -36,   -53,    43,   -53,  2962,  3096,   -74,   -70,   -59,
      -53,   -53,  -460,   -44,   -23,  3096,  3096,   -24,  2593,  3096,
@@ -1081,7 +1068,7 @@ static const short int yypact[] =
 };
 
 /* YYPGOTO[NTERM-NUM].  */
-static const short int yypgoto[] =
+static const yytype_int16 yypgoto[] =
 {
     -460,  -460,  -460,   467,  -460,  -460,   157,  -460,   378,  -130,
     -460,  -460,  -460,  -263,  -460,    21,   509,  -460,   402,  -460,
@@ -1103,7 +1090,7 @@ static const short int yypgoto[] =
    number is the opposite.  If zero, do what YYDEFACT says.
    If YYTABLE_NINF, syntax error.  */
 #define YYTABLE_NINF -291
-static const short int yytable[] =
+static const yytype_int16 yytable[] =
 {
       88,   124,    99,   148,   108,   393,   216,    97,   341,   277,
       99,   118,   162,   516,   516,   469,   257,   529,    88,   424,
@@ -1430,7 +1417,7 @@ static const short int yytable[] =
       38,    39
 };
 
-static const short int yycheck[] =
+static const yytype_int16 yycheck[] =
 {
        0,    17,     2,    37,     4,   251,   108,     1,   218,   139,
       10,    11,    50,    10,    10,   376,   129,   476,    18,   282,
@@ -1759,7 +1746,7 @@ static const short int yycheck[] =
 
 /* YYSTOS[STATE-NUM] -- The (internal number of the) accessing
    symbol of state STATE-NUM.  */
-static const unsigned char yystos[] =
+static const yytype_uint8 yystos[] =
 {
        0,     1,     6,     8,     9,    12,    13,    15,    16,    17,
       18,    19,    20,    21,    23,    24,    25,    27,    28,    29,
@@ -1847,7 +1834,7 @@ do								\
       yychar = (Token);						\
       yylval = (Value);						\
       yytoken = YYTRANSLATE (yychar);				\
-      YYPOPSTACK;						\
+      YYPOPSTACK (1);						\
       goto yybackup;						\
     }								\
   else								\
@@ -1855,7 +1842,7 @@ do								\
       yyerror (YY_("syntax error: cannot back up")); \
       YYERROR;							\
     }								\
-while (0)
+while (YYID (0))
 
 
 #define YYTERROR	1
@@ -1870,7 +1857,7 @@ while (0)
 #ifndef YYLLOC_DEFAULT
 # define YYLLOC_DEFAULT(Current, Rhs, N)				\
     do									\
-      if (N)								\
+      if (YYID (N))                                                    \
 	{								\
 	  (Current).first_line   = YYRHSLOC (Rhs, 1).first_line;	\
 	  (Current).first_column = YYRHSLOC (Rhs, 1).first_column;	\
@@ -1884,7 +1871,7 @@ while (0)
 	  (Current).first_column = (Current).last_column =		\
 	    YYRHSLOC (Rhs, 0).last_column;				\
 	}								\
-    while (0)
+    while (YYID (0))
 #endif
 
 
@@ -1896,8 +1883,8 @@ while (0)
 # if YYLTYPE_IS_TRIVIAL
 #  define YY_LOCATION_PRINT(File, Loc)			\
      fprintf (File, "%d.%d-%d.%d",			\
-              (Loc).first_line, (Loc).first_column,	\
-              (Loc).last_line,  (Loc).last_column)
+	      (Loc).first_line, (Loc).first_column,	\
+	      (Loc).last_line,  (Loc).last_column)
 # else
 #  define YY_LOCATION_PRINT(File, Loc) ((void) 0)
 # endif
@@ -1924,37 +1911,100 @@ while (0)
 do {						\
   if (yydebug)					\
     YYFPRINTF Args;				\
-} while (0)
+} while (YYID (0))
 
-# define YY_SYMBOL_PRINT(Title, Type, Value, Location)		\
-do {								\
-  if (yydebug)							\
-    {								\
-      YYFPRINTF (stderr, "%s ", Title);				\
-      yysymprint (stderr,					\
-                  Type, Value);	\
-      YYFPRINTF (stderr, "\n");					\
-    }								\
-} while (0)
+# define YY_SYMBOL_PRINT(Title, Type, Value, Location)			  \
+do {									  \
+  if (yydebug)								  \
+    {									  \
+      YYFPRINTF (stderr, "%s ", Title);					  \
+      yy_symbol_print (stderr,						  \
+		  Type, Value); \
+      YYFPRINTF (stderr, "\n");						  \
+    }									  \
+} while (YYID (0))
+
+
+/*--------------------------------.
+| Print this symbol on YYOUTPUT.  |
+`--------------------------------*/
+
+/*ARGSUSED*/
+#if (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
+static void
+yy_symbol_value_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep)
+#else
+static void
+yy_symbol_value_print (yyoutput, yytype, yyvaluep)
+    FILE *yyoutput;
+    int yytype;
+    YYSTYPE const * const yyvaluep;
+#endif
+{
+  if (!yyvaluep)
+    return;
+# ifdef YYPRINT
+  if (yytype < YYNTOKENS)
+    YYPRINT (yyoutput, yytoknum[yytype], *yyvaluep);
+# else
+  YYUSE (yyoutput);
+# endif
+  switch (yytype)
+    {
+      default:
+	break;
+    }
+}
+
+
+/*--------------------------------.
+| Print this symbol on YYOUTPUT.  |
+`--------------------------------*/
+
+#if (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
+static void
+yy_symbol_print (FILE *yyoutput, int yytype, YYSTYPE const * const yyvaluep)
+#else
+static void
+yy_symbol_print (yyoutput, yytype, yyvaluep)
+    FILE *yyoutput;
+    int yytype;
+    YYSTYPE const * const yyvaluep;
+#endif
+{
+  if (yytype < YYNTOKENS)
+    YYFPRINTF (yyoutput, "token %s (", yytname[yytype]);
+  else
+    YYFPRINTF (yyoutput, "nterm %s (", yytname[yytype]);
+
+  yy_symbol_value_print (yyoutput, yytype, yyvaluep);
+  YYFPRINTF (yyoutput, ")");
+}
 
 /*------------------------------------------------------------------.
 | yy_stack_print -- Print the state stack from its BOTTOM up to its |
 | TOP (included).                                                   |
 `------------------------------------------------------------------*/
 
-#if defined (__STDC__) || defined (__cplusplus)
+#if (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
 static void
-yy_stack_print (short int *bottom, short int *top)
+yy_stack_print (yytype_int16 *yybottom, yytype_int16 *yytop)
 #else
 static void
-yy_stack_print (bottom, top)
-    short int *bottom;
-    short int *top;
+yy_stack_print (yybottom, yytop)
+    yytype_int16 *yybottom;
+    yytype_int16 *yytop;
 #endif
 {
   YYFPRINTF (stderr, "Stack now");
-  for (/* Nothing. */; bottom <= top; ++bottom)
-    YYFPRINTF (stderr, " %d", *bottom);
+  for (; yybottom <= yytop; yybottom++)
+    {
+      int yybot = *yybottom;
+      YYFPRINTF (stderr, " %d", yybot);
+    }
   YYFPRINTF (stderr, "\n");
 }
 
@@ -1962,37 +2012,45 @@ yy_stack_print (bottom, top)
 do {								\
   if (yydebug)							\
     yy_stack_print ((Bottom), (Top));				\
-} while (0)
+} while (YYID (0))
 
 
 /*------------------------------------------------.
 | Report that the YYRULE is going to be reduced.  |
 `------------------------------------------------*/
 
-#if defined (__STDC__) || defined (__cplusplus)
+#if (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
 static void
-yy_reduce_print (int yyrule)
+yy_reduce_print (YYSTYPE *yyvsp, int yyrule)
 #else
 static void
-yy_reduce_print (yyrule)
+yy_reduce_print (yyvsp, yyrule)
+    YYSTYPE *yyvsp;
     int yyrule;
 #endif
 {
+  int yynrhs = yyr2[yyrule];
   int yyi;
   unsigned long int yylno = yyrline[yyrule];
-  YYFPRINTF (stderr, "Reducing stack by rule %d (line %lu), ",
-             yyrule - 1, yylno);
-  /* Print the symbols being reduced, and their result.  */
-  for (yyi = yyprhs[yyrule]; 0 <= yyrhs[yyi]; yyi++)
-    YYFPRINTF (stderr, "%s ", yytname[yyrhs[yyi]]);
-  YYFPRINTF (stderr, "-> %s\n", yytname[yyr1[yyrule]]);
+  YYFPRINTF (stderr, "Reducing stack by rule %d (line %lu):\n",
+	     yyrule - 1, yylno);
+  /* The symbols being reduced.  */
+  for (yyi = 0; yyi < yynrhs; yyi++)
+    {
+      YYFPRINTF (stderr, "   $%d = ", yyi + 1);
+      yy_symbol_print (stderr, yyrhs[yyprhs[yyrule] + yyi],
+		       &(yyvsp[(yyi + 1) - (yynrhs)])
+		       		       );
+      YYFPRINTF (stderr, "\n");
+    }
 }
 
 # define YY_REDUCE_PRINT(Rule)		\
 do {					\
   if (yydebug)				\
-    yy_reduce_print (Rule);		\
-} while (0)
+    yy_reduce_print (yyvsp, Rule); \
+} while (YYID (0))
 
 /* Nonzero means print parse trace.  It is left uninitialized so that
    multiple parsers can coexist.  */
@@ -2026,42 +2084,44 @@ int yydebug;
 #if YYERROR_VERBOSE
 
 # ifndef yystrlen
-#  if defined (__GLIBC__) && defined (_STRING_H)
+#  if defined __GLIBC__ && defined _STRING_H
 #   define yystrlen strlen
 #  else
 /* Return the length of YYSTR.  */
+#if (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
 static YYSIZE_T
-#   if defined (__STDC__) || defined (__cplusplus)
 yystrlen (const char *yystr)
-#   else
+#else
+static YYSIZE_T
 yystrlen (yystr)
-     const char *yystr;
-#   endif
+    const char *yystr;
+#endif
 {
-  const char *yys = yystr;
-
-  while (*yys++ != '\0')
+  YYSIZE_T yylen;
+  for (yylen = 0; yystr[yylen]; yylen++)
     continue;
-
-  return yys - yystr - 1;
+  return yylen;
 }
 #  endif
 # endif
 
 # ifndef yystpcpy
-#  if defined (__GLIBC__) && defined (_STRING_H) && defined (_GNU_SOURCE)
+#  if defined __GLIBC__ && defined _STRING_H && defined _GNU_SOURCE
 #   define yystpcpy stpcpy
 #  else
 /* Copy YYSRC to YYDEST, returning the address of the terminating '\0' in
    YYDEST.  */
+#if (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
 static char *
-#   if defined (__STDC__) || defined (__cplusplus)
 yystpcpy (char *yydest, const char *yysrc)
-#   else
+#else
+static char *
 yystpcpy (yydest, yysrc)
-     char *yydest;
-     const char *yysrc;
-#   endif
+    char *yydest;
+    const char *yysrc;
+#endif
 {
   char *yyd = yydest;
   const char *yys = yysrc;
@@ -2087,7 +2147,7 @@ yytnamerr (char *yyres, const char *yystr)
 {
   if (*yystr == '"')
     {
-      size_t yyn = 0;
+      YYSIZE_T yyn = 0;
       char const *yyp = yystr;
 
       for (;;)
@@ -2122,53 +2182,123 @@ yytnamerr (char *yyres, const char *yystr)
 }
 # endif
 
-#endif /* YYERROR_VERBOSE */
+/* Copy into YYRESULT an error message about the unexpected token
+   YYCHAR while in state YYSTATE.  Return the number of bytes copied,
+   including the terminating null byte.  If YYRESULT is null, do not
+   copy anything; just return the number of bytes that would be
+   copied.  As a special case, return 0 if an ordinary "syntax error"
+   message will do.  Return YYSIZE_MAXIMUM if overflow occurs during
+   size calculation.  */
+static YYSIZE_T
+yysyntax_error (char *yyresult, int yystate, int yychar)
+{
+  int yyn = yypact[yystate];
 
+  if (! (YYPACT_NINF < yyn && yyn <= YYLAST))
+    return 0;
+  else
+    {
+      int yytype = YYTRANSLATE (yychar);
+      YYSIZE_T yysize0 = yytnamerr (0, yytname[yytype]);
+      YYSIZE_T yysize = yysize0;
+      YYSIZE_T yysize1;
+      int yysize_overflow = 0;
+      enum { YYERROR_VERBOSE_ARGS_MAXIMUM = 5 };
+      char const *yyarg[YYERROR_VERBOSE_ARGS_MAXIMUM];
+      int yyx;
+
+# if 0
+      /* This is so xgettext sees the translatable formats that are
+	 constructed on the fly.  */
+      YY_("syntax error, unexpected %s");
+      YY_("syntax error, unexpected %s, expecting %s");
+      YY_("syntax error, unexpected %s, expecting %s or %s");
+      YY_("syntax error, unexpected %s, expecting %s or %s or %s");
+      YY_("syntax error, unexpected %s, expecting %s or %s or %s or %s");
+# endif
+      char *yyfmt;
+      char const *yyf;
+      static char const yyunexpected[] = "syntax error, unexpected %s";
+      static char const yyexpecting[] = ", expecting %s";
+      static char const yyor[] = " or %s";
+      char yyformat[sizeof yyunexpected
+		    + sizeof yyexpecting - 1
+		    + ((YYERROR_VERBOSE_ARGS_MAXIMUM - 2)
+		       * (sizeof yyor - 1))];
+      char const *yyprefix = yyexpecting;
+
+      /* Start YYX at -YYN if negative to avoid negative indexes in
+	 YYCHECK.  */
+      int yyxbegin = yyn < 0 ? -yyn : 0;
+
+      /* Stay within bounds of both yycheck and yytname.  */
+      int yychecklim = YYLAST - yyn + 1;
+      int yyxend = yychecklim < YYNTOKENS ? yychecklim : YYNTOKENS;
+      int yycount = 1;
+
+      yyarg[0] = yytname[yytype];
+      yyfmt = yystpcpy (yyformat, yyunexpected);
+
+      for (yyx = yyxbegin; yyx < yyxend; ++yyx)
+	if (yycheck[yyx + yyn] == yyx && yyx != YYTERROR)
+	  {
+	    if (yycount == YYERROR_VERBOSE_ARGS_MAXIMUM)
+	      {
+		yycount = 1;
+		yysize = yysize0;
+		yyformat[sizeof yyunexpected - 1] = '\0';
+		break;
+	      }
+	    yyarg[yycount++] = yytname[yyx];
+	    yysize1 = yysize + yytnamerr (0, yytname[yyx]);
+	    yysize_overflow |= (yysize1 < yysize);
+	    yysize = yysize1;
+	    yyfmt = yystpcpy (yyfmt, yyprefix);
+	    yyprefix = yyor;
+	  }
+
+      yyf = YY_(yyformat);
+      yysize1 = yysize + yystrlen (yyf);
+      yysize_overflow |= (yysize1 < yysize);
+      yysize = yysize1;
+
+      if (yysize_overflow)
+	return YYSIZE_MAXIMUM;
+
+      if (yyresult)
+	{
+	  /* Avoid sprintf, as that infringes on the user's name space.
+	     Don't have undefined behavior even if the translation
+	     produced a string with the wrong number of "%s"s.  */
+	  char *yyp = yyresult;
+	  int yyi = 0;
+	  while ((*yyp = *yyf) != '\0')
+	    {
+	      if (*yyp == '%' && yyf[1] == 's' && yyi < yycount)
+		{
+		  yyp += yytnamerr (yyp, yyarg[yyi++]);
+		  yyf += 2;
+		}
+	      else
+		{
+		  yyp++;
+		  yyf++;
+		}
+	    }
+	}
+      return yysize;
+    }
+}
+#endif /* YYERROR_VERBOSE */
 
 
-#if YYDEBUG
-/*--------------------------------.
-| Print this symbol on YYOUTPUT.  |
-`--------------------------------*/
-
-#if defined (__STDC__) || defined (__cplusplus)
-static void
-yysymprint (FILE *yyoutput, int yytype, YYSTYPE *yyvaluep)
-#else
-static void
-yysymprint (yyoutput, yytype, yyvaluep)
-    FILE *yyoutput;
-    int yytype;
-    YYSTYPE *yyvaluep;
-#endif
-{
-  /* Pacify ``unused variable'' warnings.  */
-  (void) yyvaluep;
-
-  if (yytype < YYNTOKENS)
-    YYFPRINTF (yyoutput, "token %s (", yytname[yytype]);
-  else
-    YYFPRINTF (yyoutput, "nterm %s (", yytname[yytype]);
-
-
-# ifdef YYPRINT
-  if (yytype < YYNTOKENS)
-    YYPRINT (yyoutput, yytoknum[yytype], *yyvaluep);
-# endif
-  switch (yytype)
-    {
-      default:
-        break;
-    }
-  YYFPRINTF (yyoutput, ")");
-}
-
-#endif /* ! YYDEBUG */
 /*-----------------------------------------------.
 | Release the memory associated to this symbol.  |
 `-----------------------------------------------*/
 
-#if defined (__STDC__) || defined (__cplusplus)
+/*ARGSUSED*/
+#if (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
 static void
 yydestruct (const char *yymsg, int yytype, YYSTYPE *yyvaluep)
 #else
@@ -2179,8 +2309,7 @@ yydestruct (yymsg, yytype, yyvaluep)
     YYSTYPE *yyvaluep;
 #endif
 {
-  /* Pacify ``unused variable'' warnings.  */
-  (void) yyvaluep;
+  YYUSE (yyvaluep);
 
   if (!yymsg)
     yymsg = "Deleting";
@@ -2190,21 +2319,19 @@ yydestruct (yymsg, yytype, yyvaluep)
     {
 
       default:
-        break;
+	break;
     }
 }
-
 
 /* Prevent warnings from -Wmissing-prototypes.  */
-
 #ifdef YYPARSE_PARAM
-# if defined (__STDC__) || defined (__cplusplus)
+#if defined __STDC__ || defined __cplusplus
 int yyparse (void *YYPARSE_PARAM);
-# else
+#else
 int yyparse ();
-# endif
+#endif
 #else /* ! YYPARSE_PARAM */
-#if defined (__STDC__) || defined (__cplusplus)
+#if defined __STDC__ || defined __cplusplus
 int yyparse (void);
 #else
 int yyparse ();
@@ -2212,11 +2339,10 @@ int yyparse ();
 #endif /* ! YYPARSE_PARAM */
 
 
-
-/* The look-ahead symbol.  */
+/* The lookahead symbol.  */
 int yychar;
 
-/* The semantic value of the look-ahead symbol.  */
+/* The semantic value of the lookahead symbol.  */
 YYSTYPE yylval;
 
 /* Number of syntax errors so far.  */
@@ -2224,82 +2350,94 @@ int yynerrs;
 
 
 
-/*----------.
-| yyparse.  |
-`----------*/
+/*-------------------------.
+| yyparse or yypush_parse.  |
+`-------------------------*/
 
 #ifdef YYPARSE_PARAM
-# if defined (__STDC__) || defined (__cplusplus)
-int yyparse (void *YYPARSE_PARAM)
-# else
-int yyparse (YYPARSE_PARAM)
-  void *YYPARSE_PARAM;
-# endif
+#if (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
+int
+yyparse (void *YYPARSE_PARAM)
+#else
+int
+yyparse (YYPARSE_PARAM)
+    void *YYPARSE_PARAM;
+#endif
 #else /* ! YYPARSE_PARAM */
-#if defined (__STDC__) || defined (__cplusplus)
+#if (defined __STDC__ || defined __C99__FUNC__ \
+     || defined __cplusplus || defined _MSC_VER)
 int
 yyparse (void)
 #else
 int
 yyparse ()
-    ;
+
 #endif
 #endif
 {
-  
-  int yystate;
+
+
+    int yystate;
+    /* Number of tokens to shift before error messages enabled.  */
+    int yyerrstatus;
+
+    /* The stacks and their tools:
+       `yyss': related to states.
+       `yyvs': related to semantic values.
+
+       Refer to the stacks thru separate pointers, to allow yyoverflow
+       to reallocate them elsewhere.  */
+
+    /* The state stack.  */
+    yytype_int16 yyssa[YYINITDEPTH];
+    yytype_int16 *yyss;
+    yytype_int16 *yyssp;
+
+    /* The semantic value stack.  */
+    YYSTYPE yyvsa[YYINITDEPTH];
+    YYSTYPE *yyvs;
+    YYSTYPE *yyvsp;
+
+    YYSIZE_T yystacksize;
+
   int yyn;
   int yyresult;
-  /* Number of tokens to shift before error messages enabled.  */
-  int yyerrstatus;
-  /* Look-ahead token as an internal (translated) token number.  */
-  int yytoken = 0;
-
-  /* Three stacks and their tools:
-     `yyss': related to states,
-     `yyvs': related to semantic values,
-     `yyls': related to locations.
-
-     Refer to the stacks thru separate pointers, to allow yyoverflow
-     to reallocate them elsewhere.  */
-
-  /* The state stack.  */
-  short int yyssa[YYINITDEPTH];
-  short int *yyss = yyssa;
-  short int *yyssp;
-
-  /* The semantic value stack.  */
-  YYSTYPE yyvsa[YYINITDEPTH];
-  YYSTYPE *yyvs = yyvsa;
-  YYSTYPE *yyvsp;
-
-
-
-#define YYPOPSTACK   (yyvsp--, yyssp--)
-
-  YYSIZE_T yystacksize = YYINITDEPTH;
-
+  /* Lookahead token as an internal (translated) token number.  */
+  int yytoken;
   /* The variables used to return semantic value and location from the
      action routines.  */
   YYSTYPE yyval;
 
+#if YYERROR_VERBOSE
+  /* Buffer for error messages, and its allocated size.  */
+  char yymsgbuf[128];
+  char *yymsg = yymsgbuf;
+  YYSIZE_T yymsg_alloc = sizeof yymsgbuf;
+#endif
 
-  /* When reducing, the number of symbols on the RHS of the reduced
-     rule.  */
-  int yylen;
+#define YYPOPSTACK(N)   (yyvsp -= (N), yyssp -= (N))
+
+  /* The number of symbols on the RHS of the reduced rule.
+     Keep to zero when no symbol should be popped.  */
+  int yylen = 0;
+
+  yytoken = 0;
+  yyss = yyssa;
+  yyvs = yyvsa;
+  yystacksize = YYINITDEPTH;
 
   YYDPRINTF ((stderr, "Starting parse\n"));
 
   yystate = 0;
   yyerrstatus = 0;
   yynerrs = 0;
-  yychar = YYEMPTY;		/* Cause a token to be read.  */
+  yychar = YYEMPTY; /* Cause a token to be read.  */
 
   /* Initialize stack pointers.
      Waste one element of value and location stack
      so that they stay on the same level as the state stack.
      The wasted elements are never initialized.  */
-
   yyssp = yyss;
   yyvsp = yyvs;
 
@@ -2310,8 +2448,7 @@ yyparse ()
 `------------------------------------------------------------*/
  yynewstate:
   /* In all cases, when you get here, the value and location stacks
-     have just been pushed. so pushing a state here evens the stacks.
-     */
+     have just been pushed.  So pushing a state here evens the stacks.  */
   yyssp++;
 
  yysetstate:
@@ -2324,12 +2461,11 @@ yyparse ()
 
 #ifdef yyoverflow
       {
-	/* Give user a chance to reallocate the stack. Use copies of
+	/* Give user a chance to reallocate the stack.  Use copies of
 	   these so that the &'s don't force the real ones into
 	   memory.  */
 	YYSTYPE *yyvs1 = yyvs;
-	short int *yyss1 = yyss;
-
+	yytype_int16 *yyss1 = yyss;
 
 	/* Each stack pointer address is followed by the size of the
 	   data in use in that stack, in bytes.  This used to be a
@@ -2338,7 +2474,6 @@ yyparse ()
 	yyoverflow (YY_("memory exhausted"),
 		    &yyss1, yysize * sizeof (*yyssp),
 		    &yyvs1, yysize * sizeof (*yyvsp),
-
 		    &yystacksize);
 
 	yyss = yyss1;
@@ -2356,14 +2491,13 @@ yyparse ()
 	yystacksize = YYMAXDEPTH;
 
       {
-	short int *yyss1 = yyss;
+	yytype_int16 *yyss1 = yyss;
 	union yyalloc *yyptr =
 	  (union yyalloc *) YYSTACK_ALLOC (YYSTACK_BYTES (yystacksize));
 	if (! yyptr)
 	  goto yyexhaustedlab;
-	YYSTACK_RELOCATE (yyss);
-	YYSTACK_RELOCATE (yyvs);
-
+	YYSTACK_RELOCATE (yyss_alloc, yyss);
+	YYSTACK_RELOCATE (yyvs_alloc, yyvs);
 #  undef YYSTACK_RELOCATE
 	if (yyss1 != yyssa)
 	  YYSTACK_FREE (yyss1);
@@ -2374,7 +2508,6 @@ yyparse ()
       yyssp = yyss + yysize - 1;
       yyvsp = yyvs + yysize - 1;
 
-
       YYDPRINTF ((stderr, "Stack size increased to %lu\n",
 		  (unsigned long int) yystacksize));
 
@@ -2384,6 +2517,9 @@ yyparse ()
 
   YYDPRINTF ((stderr, "Entering state %d\n", yystate));
 
+  if (yystate == YYFINAL)
+    YYACCEPT;
+
   goto yybackup;
 
 /*-----------.
@@ -2391,19 +2527,17 @@ yyparse ()
 `-----------*/
 yybackup:
 
-/* Do appropriate processing given the current state.  */
-/* Read a look-ahead token if we need one and don't already have one.  */
-/* yyresume: */
+  /* Do appropriate processing given the current state.  Read a
+     lookahead token if we need one and don't already have one.  */
 
-  /* First try to decide what to do without reference to look-ahead token.  */
-
+  /* First try to decide what to do without reference to lookahead token.  */
   yyn = yypact[yystate];
   if (yyn == YYPACT_NINF)
     goto yydefault;
 
-  /* Not known => get a look-ahead token if don't already have one.  */
+  /* Not known => get a lookahead token if don't already have one.  */
 
-  /* YYCHAR is either YYEMPTY or YYEOF or a valid look-ahead symbol.  */
+  /* YYCHAR is either YYEMPTY or YYEOF or a valid lookahead symbol.  */
   if (yychar == YYEMPTY)
     {
       YYDPRINTF ((stderr, "Reading a token: "));
@@ -2435,25 +2569,20 @@ yybackup:
       goto yyreduce;
     }
 
-  if (yyn == YYFINAL)
-    YYACCEPT;
-
-  /* Shift the look-ahead token.  */
-  YY_SYMBOL_PRINT ("Shifting", yytoken, &yylval, &yylloc);
-
-  /* Discard the token being shifted unless it is eof.  */
-  if (yychar != YYEOF)
-    yychar = YYEMPTY;
-
-  *++yyvsp = yylval;
-
-
   /* Count tokens shifted since error; after three, turn off error
      status.  */
   if (yyerrstatus)
     yyerrstatus--;
 
+  /* Shift the lookahead token.  */
+  YY_SYMBOL_PRINT ("Shifting", yytoken, &yylval, &yylloc);
+
+  /* Discard the shifted token.  */
+  yychar = YYEMPTY;
+
   yystate = yyn;
+  *++yyvsp = yylval;
+
   goto yynewstate;
 
 
@@ -2489,7 +2618,9 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 266 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 266 "criscript.y"
     {
 	 	if( !CParser::getparser()->getCodeGen()->isMultiPasses() )
 	 	{
@@ -2501,157 +2632,193 @@ yyreduce:
     break;
 
   case 3:
-#line 278 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 278 "criscript.y"
     {
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 4:
-#line 282 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 282 "criscript.y"
     {
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 5:
-#line 287 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 287 "criscript.y"
     {
 	 	if( !CParser::getparser()->getCodeGen()->isMultiPasses() )
 	 	{
-			CParser::getparser()->getCodeGen()->parseFunctionDeclarationNode( (yyvsp[0].pObjectData) );
+			CParser::getparser()->getCodeGen()->parseFunctionDeclarationNode( (yyvsp[(1) - (1)].pObjectData) );
 		}
 		else
 		{
 			//Keep statements to the list.
-			CParser::getparser()->getCodeGen()->updateStatementTree( (yyvsp[0].pObjectData) );
+			CParser::getparser()->getCodeGen()->updateStatementTree( (yyvsp[(1) - (1)].pObjectData) );
 		}
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 6:
-#line 300 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 300 "criscript.y"
     {
 	 	if( !CParser::getparser()->getCodeGen()->isMultiPasses() )
 	 	{
-			CParser::getparser()->getCodeGen()->parseStatementNodeTree( (yyvsp[0].pObjectData) );
+			CParser::getparser()->getCodeGen()->parseStatementNodeTree( (yyvsp[(1) - (1)].pObjectData) );
 		}
 		else
 		{
 			//Keep statements to the list.
-			CParser::getparser()->getCodeGen()->updateStatementTree( (yyvsp[0].pObjectData) );
+			CParser::getparser()->getCodeGen()->updateStatementTree( (yyvsp[(1) - (1)].pObjectData) );
 		}
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 7:
-#line 314 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 314 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_THIS, (yyvsp[0].iFileId), (yyvsp[0].iLineNumber), (yyvsp[0].iColumn) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_THIS, (yyvsp[(1) - (1)].iFileId), (yyvsp[(1) - (1)].iLineNumber), (yyvsp[(1) - (1)].iColumn) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 8:
-#line 319 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 319 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->objectLiteral( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->objectLiteral( (yyvsp[(1) - (1)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 9:
-#line 324 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 324 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 10:
-#line 329 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 329 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 11:
-#line 334 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 334 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->arrayLiteral( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->arrayLiteral( (yyvsp[(1) - (1)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 12:
-#line 339 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 339 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 13:
-#line 345 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 345 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 14:
-#line 350 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 350 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 15:
-#line 355 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 355 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 16:
-#line 360 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 360 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 17:
-#line 365 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 365 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_NULL, (yyvsp[0].iFileId), (yyvsp[0].iLineNumber), (yyvsp[0].iColumn)  );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_NULL, (yyvsp[(1) - (1)].iFileId), (yyvsp[(1) - (1)].iLineNumber), (yyvsp[(1) - (1)].iColumn)  );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 18:
-#line 370 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 370 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_UNDEFINED, (yyvsp[0].iFileId), (yyvsp[0].iLineNumber), (yyvsp[0].iColumn)  );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_UNDEFINED, (yyvsp[(1) - (1)].iFileId), (yyvsp[(1) - (1)].iLineNumber), (yyvsp[(1) - (1)].iColumn)  );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 19:
-#line 375 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 375 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 20:
-#line 381 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 381 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -2659,15 +2826,19 @@ yyreduce:
     break;
 
   case 21:
-#line 386 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 386 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 22:
-#line 392 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 392 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -2675,39 +2846,43 @@ yyreduce:
     break;
 
   case 23:
-#line 397 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 397 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_UNDEFINED, (yyvsp[-2].iFileId), (yyvsp[-2].iLineNumber), (yyvsp[-2].iColumn) );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_UNDEFINED, (yyvsp[(1) - (3)].iFileId), (yyvsp[(1) - (3)].iLineNumber), (yyvsp[(1) - (3)].iColumn) );
 		node = CParser::getparser()->getCodeGen()->propertyNameAndValue( NULL, node );
 		// add 1 more 'undefined' node
-		node->SetSibling( (yyvsp[-1].pObjectData) );
+		node->SetSibling( (yyvsp[(2) - (3)].pObjectData) );
 		(yyval.pObjectData) = node;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 24:
-#line 406 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 406 "criscript.y"
     {
-		CCgNodeData* nodetop = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_UNDEFINED, (yyvsp[-4].iFileId), (yyvsp[-4].iLineNumber), (yyvsp[-4].iColumn) );
+		CCgNodeData* nodetop = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_UNDEFINED, (yyvsp[(1) - (5)].iFileId), (yyvsp[(1) - (5)].iLineNumber), (yyvsp[(1) - (5)].iColumn) );
 		nodetop = CParser::getparser()->getCodeGen()->propertyNameAndValue( NULL, nodetop );
-		CCgNodeData* nodetail = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_UNDEFINED, (yyvsp[-4].iFileId), (yyvsp[-4].iLineNumber), (yyvsp[-4].iColumn)  );
+		CCgNodeData* nodetail = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_UNDEFINED, (yyvsp[(1) - (5)].iFileId), (yyvsp[(1) - (5)].iLineNumber), (yyvsp[(1) - (5)].iColumn)  );
 		nodetail = CParser::getparser()->getCodeGen()->propertyNameAndValue( NULL, nodetail );
 		// add 1 more 'undefined' node
 
-		if( (yyvsp[-3].pObjectData) != NULL )
+		if( (yyvsp[(2) - (5)].pObjectData) != NULL )
 		{
-			nodetop->SetSibling( (yyvsp[-3].pObjectData) );
-			(yyvsp[-3].pObjectData)->SetSibling( (yyvsp[-2].pObjectData) );
-			(yyvsp[-2].pObjectData)->SetSibling( nodetail );
-			nodetail->SetSibling( (yyvsp[-1].pObjectData) );
+			nodetop->SetSibling( (yyvsp[(2) - (5)].pObjectData) );
+			(yyvsp[(2) - (5)].pObjectData)->SetSibling( (yyvsp[(3) - (5)].pObjectData) );
+			(yyvsp[(3) - (5)].pObjectData)->SetSibling( nodetail );
+			nodetail->SetSibling( (yyvsp[(4) - (5)].pObjectData) );
 			(yyval.pObjectData) = nodetail;		
 		}
 		else
 		{
-			nodetop->SetSibling( (yyvsp[-2].pObjectData) );
-			(yyvsp[-2].pObjectData)->SetSibling( nodetail );
-			nodetail->SetSibling( (yyvsp[-1].pObjectData) );
+			nodetop->SetSibling( (yyvsp[(3) - (5)].pObjectData) );
+			(yyvsp[(3) - (5)].pObjectData)->SetSibling( nodetail );
+			nodetail->SetSibling( (yyvsp[(4) - (5)].pObjectData) );
 			(yyval.pObjectData) = nodetop;		
 		}
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -2715,55 +2890,65 @@ yyreduce:
     break;
 
   case 25:
-#line 431 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 431 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 26:
-#line 436 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 436 "criscript.y"
     {
-		CCgNodeData* nodetail = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_UNDEFINED, (yyvsp[-3].iFileId), (yyvsp[-3].iLineNumber), (yyvsp[-3].iColumn) );
+		CCgNodeData* nodetail = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_UNDEFINED, (yyvsp[(1) - (4)].iFileId), (yyvsp[(1) - (4)].iLineNumber), (yyvsp[(1) - (4)].iColumn) );
 		nodetail = CParser::getparser()->getCodeGen()->propertyNameAndValue( NULL, nodetail );
-		(yyvsp[-2].pObjectData)->SetSibling( nodetail );
-		nodetail->SetSibling( (yyvsp[-1].pObjectData) );
-		(yyval.pObjectData) = (yyvsp[-2].pObjectData);
+		(yyvsp[(2) - (4)].pObjectData)->SetSibling( nodetail );
+		nodetail->SetSibling( (yyvsp[(3) - (4)].pObjectData) );
+		(yyval.pObjectData) = (yyvsp[(2) - (4)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 27:
-#line 446 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 446 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyNameAndValue( NULL, (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyNameAndValue( NULL, (yyvsp[(1) - (1)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 28:
-#line 452 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 452 "criscript.y"
     {
-		if( (yyvsp[-1].pObjectData) != NULL )
+		if( (yyvsp[(2) - (3)].pObjectData) != NULL )
 		{
-			(yyvsp[-2].pObjectData)->SetSibling( (yyvsp[-1].pObjectData) );
-			CCgNodeData* node = CParser::getparser()->getCodeGen()->propertyNameAndValue( NULL, (yyvsp[0].pObjectData) );
-			(yyvsp[-1].pObjectData)->SetSibling( node );
-			(yyval.pObjectData) = (yyvsp[-2].pObjectData);
+			(yyvsp[(1) - (3)].pObjectData)->SetSibling( (yyvsp[(2) - (3)].pObjectData) );
+			CCgNodeData* node = CParser::getparser()->getCodeGen()->propertyNameAndValue( NULL, (yyvsp[(3) - (3)].pObjectData) );
+			(yyvsp[(2) - (3)].pObjectData)->SetSibling( node );
+			(yyval.pObjectData) = (yyvsp[(1) - (3)].pObjectData);
 		}
 		else
 		{
-			CCgNodeData* node = CParser::getparser()->getCodeGen()->propertyNameAndValue( NULL, (yyvsp[0].pObjectData) );
-			(yyvsp[-2].pObjectData)->SetSibling( node );
-			(yyval.pObjectData) = (yyvsp[-2].pObjectData);
+			CCgNodeData* node = CParser::getparser()->getCodeGen()->propertyNameAndValue( NULL, (yyvsp[(3) - (3)].pObjectData) );
+			(yyvsp[(1) - (3)].pObjectData)->SetSibling( node );
+			(yyval.pObjectData) = (yyvsp[(1) - (3)].pObjectData);
 		}
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 29:
-#line 470 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 470 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -2771,14 +2956,16 @@ yyreduce:
     break;
 
   case 30:
-#line 475 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 475 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_UNDEFINED, (yyvsp[-1].iFileId), (yyvsp[-1].iLineNumber), (yyvsp[-1].iColumn) );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->identifier( STRING_INTERNAL_UNDEFINED, (yyvsp[(1) - (2)].iFileId), (yyvsp[(1) - (2)].iLineNumber), (yyvsp[(1) - (2)].iColumn) );
 		node = CParser::getparser()->getCodeGen()->propertyNameAndValue( NULL, node );
 
- 		if( (yyvsp[-1].pObjectData) != NULL )
+ 		if( (yyvsp[(1) - (2)].pObjectData) != NULL )
  		{
-			(yyvsp[-1].pObjectData)->SetSibling( node );	
+			(yyvsp[(1) - (2)].pObjectData)->SetSibling( node );	
  		}
  		else
 			(yyval.pObjectData) = node;
@@ -2787,24 +2974,30 @@ yyreduce:
     break;
 
   case 31:
-#line 489 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 489 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 32:
-#line 498 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 498 "criscript.y"
     {
-		(yyvsp[-1].pObjectData)->SetSibling( (yyvsp[0].pObjectData) );
-		(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+		(yyvsp[(1) - (2)].pObjectData)->SetSibling( (yyvsp[(2) - (2)].pObjectData) );
+		(yyval.pObjectData) = (yyvsp[(1) - (2)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 33:
-#line 504 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 504 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -2812,7 +3005,9 @@ yyreduce:
     break;
 
   case 34:
-#line 510 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 510 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -2820,7 +3015,9 @@ yyreduce:
     break;
 
   case 35:
-#line 515 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 515 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -2828,199 +3025,247 @@ yyreduce:
     break;
 
   case 36:
-#line 520 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 520 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (2)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 37:
-#line 525 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 525 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (2)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 38:
-#line 530 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 530 "criscript.y"
     {
- 		if( (yyvsp[-2].pObjectData) != NULL )
+ 		if( (yyvsp[(1) - (3)].pObjectData) != NULL )
  		{ 
-			(yyvsp[-2].pObjectData)->SetSibling( (yyvsp[0].pObjectData) );
-			(yyval.pObjectData) = (yyvsp[-2].pObjectData);
+			(yyvsp[(1) - (3)].pObjectData)->SetSibling( (yyvsp[(3) - (3)].pObjectData) );
+			(yyval.pObjectData) = (yyvsp[(1) - (3)].pObjectData);
 		}
 		else
 		{
-			(yyval.pObjectData) = (yyvsp[0].pObjectData);
+			(yyval.pObjectData) = (yyvsp[(3) - (3)].pObjectData);
 		}
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 39:
-#line 544 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 544 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->propertyNameAndValue( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->propertyNameAndValue( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 40:
-#line 550 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 550 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 41:
-#line 555 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 555 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 42:
-#line 560 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 560 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 43:
-#line 566 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 566 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 44:
-#line 571 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 571 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 45:
-#line 576 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 576 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyAccessExpressionByExp( (yyvsp[-3].pObjectData), (yyvsp[-1].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyAccessExpressionByExp( (yyvsp[(1) - (4)].pObjectData), (yyvsp[(3) - (4)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 46:
-#line 581 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 581 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyAccessExpressionById( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyAccessExpressionById( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 47:
-#line 586 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 586 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->newOperator( (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->newOperator( (yyvsp[(2) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 48:
-#line 592 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 592 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 49:
-#line 597 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 597 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->newOperator( (yyvsp[0].pObjectData), NULL );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->newOperator( (yyvsp[(2) - (2)].pObjectData), NULL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 50:
-#line 603 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 603 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 51:
-#line 609 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 609 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->callExpression( (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->callExpression( (yyvsp[(1) - (2)].pObjectData), (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 52:
-#line 614 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 614 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->callExpression( (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->callExpression( (yyvsp[(1) - (2)].pObjectData), (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 53:
-#line 619 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 619 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyAccessExpressionByExp( (yyvsp[-3].pObjectData), (yyvsp[-1].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyAccessExpressionByExp( (yyvsp[(1) - (4)].pObjectData), (yyvsp[(3) - (4)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 54:
-#line 624 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 624 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyAccessExpressionById( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyAccessExpressionById( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 55:
-#line 630 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 630 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->callExpression( (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->callExpression( (yyvsp[(1) - (2)].pObjectData), (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 56:
-#line 635 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 635 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->callExpression( (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->callExpression( (yyvsp[(1) - (2)].pObjectData), (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 57:
-#line 640 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 640 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyAccessExpressionByExp( (yyvsp[-3].pObjectData), (yyvsp[-1].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyAccessExpressionByExp( (yyvsp[(1) - (4)].pObjectData), (yyvsp[(3) - (4)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 58:
-#line 645 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 645 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyAccessExpressionById( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->propertyAccessExpressionById( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 59:
-#line 651 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 651 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -3028,893 +3273,1103 @@ yyreduce:
     break;
 
   case 60:
-#line 656 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 656 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 61:
-#line 662 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 662 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 62:
-#line 667 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 667 "criscript.y"
     {
 		//Note that flipping the order of the arg
-		(yyvsp[0].pObjectData)->SetSibling( (yyvsp[-2].pObjectData) );
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyvsp[(3) - (3)].pObjectData)->SetSibling( (yyvsp[(1) - (3)].pObjectData) );
+		(yyval.pObjectData) = (yyvsp[(3) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 63:
-#line 675 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 675 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 64:
-#line 680 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 680 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 65:
-#line 686 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 686 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 66:
-#line 691 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 691 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 67:
-#line 697 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 697 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 68:
-#line 702 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 702 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-1].pObjectData) );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (2)].pObjectData) );
 		node = CParser::getparser()->getCodeGen()->unaryIncOperator( node, true );
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-1].pObjectData), node );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (2)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 69:
-#line 709 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 709 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-1].pObjectData) );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (2)].pObjectData) );
 		node = CParser::getparser()->getCodeGen()->unaryDecOperator( node, true );
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-1].pObjectData), node );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (2)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 70:
-#line 717 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 717 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 71:
-#line 722 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 722 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryDeleteOperator( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryDeleteOperator( (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 72:
-#line 727 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 727 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryTypeofOperator( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryTypeofOperator( (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 73:
-#line 732 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 732 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryVoidOperator( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryVoidOperator( (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 74:
-#line 737 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 737 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[0].pObjectData) );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(2) - (2)].pObjectData) );
 		node = CParser::getparser()->getCodeGen()->unaryIncOperator( node, false );
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[0].pObjectData), node );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(2) - (2)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 75:
-#line 744 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 744 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[0].pObjectData) );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(2) - (2)].pObjectData) );
 		node = CParser::getparser()->getCodeGen()->unaryDecOperator( node, false );
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[0].pObjectData), node );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(2) - (2)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 76:
-#line 751 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 751 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryPlusOperator( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryPlusOperator( (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 77:
-#line 756 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 756 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryMinusOperator( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryMinusOperator( (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 78:
-#line 761 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 761 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryBitwiseNotOperator( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryBitwiseNotOperator( (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 79:
-#line 766 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 766 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryLogicalNotOperator( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryLogicalNotOperator( (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 80:
-#line 772 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 772 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 81:
-#line 777 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 777 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->multiplyOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->multiplyOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 82:
-#line 782 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 782 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->divisionOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->divisionOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 83:
-#line 787 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 787 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->reminderOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->reminderOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 84:
-#line 793 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 793 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 85:
-#line 798 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 798 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->addOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->addOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 86:
-#line 803 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 803 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->subtractOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->subtractOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 87:
-#line 809 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 809 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 88:
-#line 814 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 814 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->shiftLeftOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->shiftLeftOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 89:
-#line 819 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 819 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->shiftRightOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->shiftRightOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 90:
-#line 824 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 824 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->shiftRightUnsignedOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->shiftRightUnsignedOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 91:
-#line 830 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 830 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 92:
-#line 835 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 835 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_GREATER );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_GREATER );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 93:
-#line 840 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 840 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_GREATEREQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_GREATEREQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 94:
-#line 845 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 845 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_LESS );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_LESS );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 95:
-#line 850 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 850 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_LESSEQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_LESSEQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 96:
-#line 855 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 855 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->instanceOfOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->instanceOfOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 97:
-#line 860 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 860 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->inOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->inOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 98:
-#line 866 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 866 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 99:
-#line 871 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 871 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_GREATER );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_GREATER );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 100:
-#line 876 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 876 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_GREATEREQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_GREATEREQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 101:
-#line 881 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 881 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_LESS );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_LESS );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 102:
-#line 886 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 886 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_LESSEQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_LESSEQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 103:
-#line 891 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 891 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->instanceOfOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->instanceOfOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 104:
-#line 897 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 897 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 105:
-#line 902 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 902 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_EQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_EQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 106:
-#line 907 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 907 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_NOTEQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_NOTEQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 107:
-#line 912 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 912 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_STRICTEQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_STRICTEQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 108:
-#line 917 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 917 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_STRICTNOTEQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_STRICTNOTEQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 109:
-#line 923 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 923 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 110:
-#line 928 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 928 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_EQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_EQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 111:
-#line 933 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 933 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_NOTEQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_NOTEQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 112:
-#line 938 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 938 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_STRICTEQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_STRICTEQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 113:
-#line 943 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 943 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_STRICTNOTEQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_STRICTNOTEQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 114:
-#line 949 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 949 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 115:
-#line 954 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 954 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseAndOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseAndOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 116:
-#line 960 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 960 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 117:
-#line 965 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 965 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseAndOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseAndOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 118:
-#line 971 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 971 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 119:
-#line 976 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 976 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseXorOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseXorOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 120:
-#line 982 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 982 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 121:
-#line 987 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 987 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseXorOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseXorOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 122:
-#line 993 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 993 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 123:
-#line 998 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 998 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseOrOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseOrOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 124:
-#line 1004 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1004 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 125:
-#line 1009 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1009 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseOrOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseOrOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 126:
-#line 1015 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1015 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 127:
-#line 1020 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1020 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->logicalAndOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->logicalAndOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 128:
-#line 1026 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1026 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 129:
-#line 1031 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1031 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->logicalAndOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->logicalAndOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 130:
-#line 1037 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1037 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 131:
-#line 1042 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1042 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->logicalOrOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->logicalOrOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 132:
-#line 1048 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1048 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 133:
-#line 1053 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1053 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->logicalOrOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->logicalOrOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 134:
-#line 1059 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1059 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 135:
-#line 1064 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1064 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->conditionalExpression( (yyvsp[-4].pObjectData), (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->conditionalExpression( (yyvsp[(1) - (5)].pObjectData), (yyvsp[(3) - (5)].pObjectData), (yyvsp[(5) - (5)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 136:
-#line 1070 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1070 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 137:
-#line 1075 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1075 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->conditionalExpression( (yyvsp[-4].pObjectData), (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->conditionalExpression( (yyvsp[(1) - (5)].pObjectData), (yyvsp[(3) - (5)].pObjectData), (yyvsp[(5) - (5)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 138:
-#line 1081 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1081 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 139:
-#line 1086 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1086 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->multiplyOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->multiplyOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 140:
-#line 1093 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1093 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->divisionOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->divisionOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 141:
-#line 1100 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1100 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->addOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->addOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 142:
-#line 1107 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1107 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->subtractOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->subtractOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 143:
-#line 1114 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1114 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->bitwiseOrOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->bitwiseOrOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 144:
-#line 1121 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1121 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->bitwiseXorOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->bitwiseXorOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 145:
-#line 1128 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1128 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->bitwiseAndOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->bitwiseAndOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 146:
-#line 1135 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1135 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->shiftRightOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->shiftRightOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 147:
-#line 1142 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1142 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->shiftRightUnsignedOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->shiftRightUnsignedOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 148:
-#line 1149 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1149 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->shiftLeftOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->shiftLeftOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 149:
-#line 1156 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1156 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->reminderOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->reminderOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 150:
-#line 1163 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1163 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 151:
-#line 1169 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1169 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 152:
-#line 1174 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1174 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->multiplyOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->multiplyOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 153:
-#line 1181 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1181 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->divisionOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->divisionOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 154:
-#line 1188 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1188 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->addOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->addOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 155:
-#line 1195 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1195 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->subtractOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->subtractOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 156:
-#line 1202 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1202 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->bitwiseOrOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->bitwiseOrOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 157:
-#line 1209 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1209 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->bitwiseXorOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->bitwiseXorOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 158:
-#line 1216 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1216 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->bitwiseAndOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->bitwiseAndOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 159:
-#line 1223 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1223 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->shiftRightOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->shiftRightOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 160:
-#line 1230 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1230 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->shiftRightUnsignedOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->shiftRightUnsignedOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 161:
-#line 1237 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1237 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->shiftLeftOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->shiftLeftOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 162:
-#line 1244 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1244 "criscript.y"
     {
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[-2].pObjectData) );
-		node = CParser::getparser()->getCodeGen()->reminderOperator( node, (yyvsp[0].pObjectData) ); 
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-2].pObjectData), node );
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->duplicateNode( (yyvsp[(1) - (3)].pObjectData) );
+		node = CParser::getparser()->getCodeGen()->reminderOperator( node, (yyvsp[(3) - (3)].pObjectData) ); 
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(1) - (3)].pObjectData), node );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 163:
-#line 1251 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1251 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 164:
-#line 1257 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1257 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -3922,32 +4377,40 @@ yyreduce:
     break;
 
   case 165:
-#line 1262 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1262 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 166:
-#line 1268 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1268 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 167:
-#line 1273 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1273 "criscript.y"
     {
-		(yyvsp[-2].pObjectData)->SetSibling( (yyvsp[0].pObjectData) );
-		(yyval.pObjectData) = (yyvsp[-2].pObjectData);
+		(yyvsp[(1) - (3)].pObjectData)->SetSibling( (yyvsp[(3) - (3)].pObjectData) );
+		(yyval.pObjectData) = (yyvsp[(1) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 168:
-#line 1280 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1280 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -3955,48 +4418,60 @@ yyreduce:
     break;
 
   case 169:
-#line 1285 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1285 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 170:
-#line 1291 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1291 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 171:
-#line 1296 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1296 "criscript.y"
     {
-		(yyvsp[-2].pObjectData)->SetSibling( (yyvsp[0].pObjectData) );
-		(yyval.pObjectData) = (yyvsp[-2].pObjectData);
+		(yyvsp[(1) - (3)].pObjectData)->SetSibling( (yyvsp[(3) - (3)].pObjectData) );
+		(yyval.pObjectData) = (yyvsp[(1) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 172:
-#line 1303 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1303 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 173:
-#line 1308 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1308 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 174:
-#line 1313 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1313 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -4004,115 +4479,143 @@ yyreduce:
     break;
 
   case 175:
-#line 1318 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1318 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 176:
-#line 1323 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1323 "criscript.y"
     {
 		//Clear eval stack
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->expressionStatement( (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->expressionStatement( (yyvsp[(1) - (1)].pObjectData) ); 
 	;}
     break;
 
   case 177:
-#line 1328 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1328 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 178:
-#line 1333 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1333 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 179:
-#line 1338 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1338 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 180:
-#line 1343 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1343 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 181:
-#line 1348 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1348 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 182:
-#line 1353 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1353 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 183:
-#line 1358 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1358 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 184:
-#line 1363 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1363 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 185:
-#line 1368 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1368 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 186:
-#line 1373 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1373 "criscript.y"
     {
  		/*JScript compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 187:
-#line 1380 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1380 "criscript.y"
     {
  		/*JScript compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 188:
-#line 1387 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1387 "criscript.y"
     {
  		(yyval.pObjectData) = NULL;
  		/*JScript compatibility extension*/
@@ -4123,7 +4626,9 @@ yyreduce:
     break;
 
   case 189:
-#line 1395 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1395 "criscript.y"
     {
  		(yyval.pObjectData) = NULL;
  		/*JScript compatibility extension*/
@@ -4134,9 +4639,11 @@ yyreduce:
     break;
 
   case 190:
-#line 1403 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1403 "criscript.y"
     {
-		CParser::getparser()->getCodeGen()->reportError( ERROR_SYNTAXERROR, (yyvsp[-1].iFileId), (yyvsp[-1].iLineNumber), (yyvsp[-1].iColumn) );
+		CParser::getparser()->getCodeGen()->reportError( ERROR_SYNTAXERROR, (yyvsp[(1) - (2)].iFileId), (yyvsp[(1) - (2)].iLineNumber), (yyvsp[(1) - (2)].iColumn) );
 		(yyval.pObjectData) = NULL;
 		yyerrok;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -4144,7 +4651,9 @@ yyreduce:
     break;
 
   case 191:
-#line 1410 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1410 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		//CParser::getparser()->getCodeGen()->endOfFile();
@@ -4154,15 +4663,19 @@ yyreduce:
     break;
 
   case 192:
-#line 1418 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1418 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 193:
-#line 1423 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1423 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -4170,94 +4683,116 @@ yyreduce:
     break;
 
   case 194:
-#line 1429 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1429 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 195:
-#line 1434 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1434 "criscript.y"
     {
-		if( (yyvsp[-1].pObjectData) != NULL )
+		if( (yyvsp[(1) - (2)].pObjectData) != NULL )
 		{
-			(yyvsp[-1].pObjectData)->SetSibling( (yyvsp[0].pObjectData) );
-			(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+			(yyvsp[(1) - (2)].pObjectData)->SetSibling( (yyvsp[(2) - (2)].pObjectData) );
+			(yyval.pObjectData) = (yyvsp[(1) - (2)].pObjectData);
 		}
 		else
-			(yyval.pObjectData) = (yyvsp[0].pObjectData);
+			(yyval.pObjectData) = (yyvsp[(2) - (2)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 196:
-#line 1445 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1445 "criscript.y"
     { AUTOSEMICOLON ;}
     break;
 
   case 197:
-#line 1446 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1446 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[-2].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (4)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 198:
-#line 1452 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1452 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 199:
-#line 1457 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1457 "criscript.y"
     {
-		(yyvsp[-2].pObjectData)->SetSibling( (yyvsp[0].pObjectData) );
-		(yyval.pObjectData) = (yyvsp[-2].pObjectData);
+		(yyvsp[(1) - (3)].pObjectData)->SetSibling( (yyvsp[(3) - (3)].pObjectData) );
+		(yyval.pObjectData) = (yyvsp[(1) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 200:
-#line 1464 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1464 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 201:
-#line 1469 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1469 "criscript.y"
     {
-		(yyvsp[-2].pObjectData)->SetSibling( (yyvsp[0].pObjectData) );
-		(yyval.pObjectData) = (yyvsp[-2].pObjectData);
+		(yyvsp[(1) - (3)].pObjectData)->SetSibling( (yyvsp[(3) - (3)].pObjectData) );
+		(yyval.pObjectData) = (yyvsp[(1) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 202:
-#line 1476 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1476 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->variableDeclaration( (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->variableDeclaration( (yyvsp[(1) - (2)].pObjectData), (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 203:
-#line 1481 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1481 "criscript.y"
     {
  		/*ECMA4 compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_ES4DRAFT );
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->typedVariableDeclaration( (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->typedVariableDeclaration( (yyvsp[(1) - (2)].pObjectData), (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 204:
-#line 1489 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1489 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -4265,57 +4800,69 @@ yyreduce:
     break;
 
   case 205:
-#line 1494 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1494 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 206:
-#line 1500 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1500 "criscript.y"
     {
  		/*ECMA4 compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_ES4DRAFT );
  		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->makeNode( CG_NODE_TYPEDIDENTIFIER,
  														(CG_OPERATIONTYPE)0,
- 														(yyvsp[-4].pObjectData), (yyvsp[-1].pObjectData) );
+ 														(yyvsp[(1) - (5)].pObjectData), (yyvsp[(4) - (5)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 207:
-#line 1510 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1510 "criscript.y"
     {
  		/*ECMA4 compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_ES4DRAFT );
  		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->makeNode( CG_NODE_TYPEDIDENTIFIER,
  														(CG_OPERATIONTYPE)0,
- 														(yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+ 														(yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 208:
-#line 1520 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1520 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->variableDeclaration( (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->variableDeclaration( (yyvsp[(1) - (2)].pObjectData), (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 209:
-#line 1525 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1525 "criscript.y"
     {
  		/*ECMA4 compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_ES4DRAFT );
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->typedVariableDeclaration( (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->typedVariableDeclaration( (yyvsp[(1) - (2)].pObjectData), (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 210:
-#line 1534 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1534 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -4323,31 +4870,39 @@ yyreduce:
     break;
 
   case 211:
-#line 1539 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1539 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 212:
-#line 1545 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1545 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (2)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 213:
-#line 1551 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1551 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (2)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 214:
-#line 1557 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1557 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -4355,28 +4910,36 @@ yyreduce:
     break;
 
   case 215:
-#line 1562 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1562 "criscript.y"
     { AUTOSEMICOLON ;}
     break;
 
   case 216:
-#line 1563 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1563 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[-2].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 217:
-#line 1569 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1569 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->ifStatement( (yyvsp[-3].pObjectData), (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->ifStatement( (yyvsp[(3) - (6)].pObjectData), (yyvsp[(5) - (6)].pObjectData), (yyvsp[(6) - (6)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 218:
-#line 1575 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1575 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -4384,123 +4947,155 @@ yyreduce:
     break;
 
   case 219:
-#line 1580 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1580 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (2)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 220:
-#line 1586 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1586 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->forStatement( NULL, (yyvsp[-1].pObjectData), NULL, (yyvsp[-4].pObjectData), true ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->forStatement( NULL, (yyvsp[(5) - (6)].pObjectData), NULL, (yyvsp[(2) - (6)].pObjectData), true ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 221:
-#line 1591 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1591 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->forStatement( NULL, (yyvsp[-2].pObjectData), NULL, (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->forStatement( NULL, (yyvsp[(3) - (5)].pObjectData), NULL, (yyvsp[(5) - (5)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 222:
-#line 1596 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1596 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->forStatement( (yyvsp[-6].pObjectData), (yyvsp[-4].pObjectData), (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->forStatement( (yyvsp[(3) - (9)].pObjectData), (yyvsp[(5) - (9)].pObjectData), (yyvsp[(7) - (9)].pObjectData), (yyvsp[(9) - (9)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 223:
-#line 1601 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1601 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->forStatement( (yyvsp[-6].pObjectData), (yyvsp[-4].pObjectData), (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->forStatement( (yyvsp[(4) - (10)].pObjectData), (yyvsp[(6) - (10)].pObjectData), (yyvsp[(8) - (10)].pObjectData), (yyvsp[(10) - (10)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 224:
-#line 1606 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1606 "criscript.y"
     {
 		CCgNodeData* dummy = CParser::getparser()->getCodeGen()->makeFormulaNode( CG_NONE, NULL, NULL, false, false );
 //		assert( $4->rhsNode == NULL );
-		(yyvsp[-4].pObjectData)->rhsNode = dummy;
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->forInStatement( (yyvsp[-4].pObjectData), (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyvsp[(4) - (8)].pObjectData)->rhsNode = dummy;
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->forInStatement( (yyvsp[(4) - (8)].pObjectData), (yyvsp[(6) - (8)].pObjectData), (yyvsp[(8) - (8)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 225:
-#line 1614 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1614 "criscript.y"
     {
 		CCgNodeData* dummy = CParser::getparser()->getCodeGen()->makeFormulaNode( CG_NONE, NULL, NULL, false, false );
-		CCgNodeData* node = CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[-4].pObjectData), dummy );
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->forInStatement( node, (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		CCgNodeData* node = CParser::getparser()->getCodeGen()->variableAssignment( (yyvsp[(3) - (7)].pObjectData), dummy );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->forInStatement( node, (yyvsp[(5) - (7)].pObjectData), (yyvsp[(7) - (7)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 226:
-#line 1621 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1621 "criscript.y"
     { AUTOSEMICOLON ;}
     break;
 
   case 227:
-#line 1622 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1622 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->continueStatement( (yyvsp[-2].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->continueStatement( (yyvsp[(2) - (4)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 228:
-#line 1627 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1627 "criscript.y"
     { AUTOSEMICOLON ;}
     break;
 
   case 229:
-#line 1628 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1628 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->breakStatement( (yyvsp[-2].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->breakStatement( (yyvsp[(2) - (4)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 230:
-#line 1633 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1633 "criscript.y"
     { AUTOSEMICOLON ;}
     break;
 
   case 231:
-#line 1634 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1634 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->returnStatement( (yyvsp[-2].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->returnStatement( (yyvsp[(2) - (4)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 232:
-#line 1640 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1640 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->withStatement( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->withStatement( (yyvsp[(3) - (5)].pObjectData), (yyvsp[(5) - (5)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 233:
-#line 1646 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1646 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->switchStatement( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->switchStatement( (yyvsp[(3) - (5)].pObjectData), (yyvsp[(5) - (5)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 234:
-#line 1652 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1652 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -4508,73 +5103,91 @@ yyreduce:
     break;
 
   case 235:
-#line 1657 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1657 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 236:
-#line 1663 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1663 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 237:
-#line 1668 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1668 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 238:
-#line 1673 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1673 "criscript.y"
     {
-		(yyvsp[-1].pObjectData)->SetSibling( (yyvsp[0].pObjectData) );
-		(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+		(yyvsp[(1) - (2)].pObjectData)->SetSibling( (yyvsp[(2) - (2)].pObjectData) );
+		(yyval.pObjectData) = (yyvsp[(1) - (2)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 239:
-#line 1679 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1679 "criscript.y"
     {
-		(yyvsp[-1].pObjectData)->SetSibling( (yyvsp[0].pObjectData) );
-		(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+		(yyvsp[(1) - (2)].pObjectData)->SetSibling( (yyvsp[(2) - (2)].pObjectData) );
+		(yyval.pObjectData) = (yyvsp[(1) - (2)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 240:
-#line 1686 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1686 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->caseClause( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->caseClause( (yyvsp[(2) - (4)].pObjectData), (yyvsp[(4) - (4)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 241:
-#line 1691 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1691 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->caseClause( (yyvsp[-1].pObjectData), NULL ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->caseClause( (yyvsp[(2) - (3)].pObjectData), NULL ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 242:
-#line 1697 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1697 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->caseClause( NULL, (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->caseClause( NULL, (yyvsp[(3) - (3)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 243:
-#line 1702 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1702 "criscript.y"
     {
 		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->caseClause( NULL, NULL ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -4582,152 +5195,188 @@ yyreduce:
     break;
 
   case 244:
-#line 1708 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1708 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->labeledStatement( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->labeledStatement( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 245:
-#line 1713 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1713 "criscript.y"
     { AUTOSEMICOLON ;}
     break;
 
   case 246:
-#line 1714 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1714 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->throwStatement( (yyvsp[-2].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->throwStatement( (yyvsp[(2) - (4)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 247:
-#line 1720 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1720 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->exceptionHandlingClause( (yyvsp[-1].pObjectData), NULL, (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->exceptionHandlingClause( (yyvsp[(2) - (3)].pObjectData), NULL, (yyvsp[(3) - (3)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 248:
-#line 1725 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1725 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->exceptionHandlingClause( (yyvsp[-2].pObjectData), (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->exceptionHandlingClause( (yyvsp[(2) - (4)].pObjectData), (yyvsp[(3) - (4)].pObjectData), (yyvsp[(4) - (4)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 249:
-#line 1730 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1730 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->exceptionHandlingClause( (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData), NULL ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->exceptionHandlingClause( (yyvsp[(2) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), NULL ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 250:
-#line 1735 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1735 "criscript.y"
     {
-		CParser::getparser()->getCodeGen()->reportError( ERROR_EXPECTED_CATCH, (yyvsp[0].iFileId), (yyvsp[0].iLineNumber), (yyvsp[0].iColumn) );
+		CParser::getparser()->getCodeGen()->reportError( ERROR_EXPECTED_CATCH, (yyvsp[(3) - (3)].iFileId), (yyvsp[(3) - (3)].iLineNumber), (yyvsp[(3) - (3)].iColumn) );
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 251:
-#line 1742 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1742 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->catchBlock( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->catchBlock( (yyvsp[(3) - (5)].pObjectData), (yyvsp[(5) - (5)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 252:
-#line 1748 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1748 "criscript.y"
     {
 		//$$ = $2;
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->finallyBlock( (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->finallyBlock( (yyvsp[(2) - (2)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 253:
-#line 1756 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1756 "criscript.y"
     {
-		if( (yyvsp[-1].pObjectData) != NULL )
+		if( (yyvsp[(1) - (2)].pObjectData) != NULL )
 		{
-			(yyvsp[-1].pObjectData)->SetSibling( (yyvsp[0].pObjectData) );
-			(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+			(yyvsp[(1) - (2)].pObjectData)->SetSibling( (yyvsp[(2) - (2)].pObjectData) );
+			(yyval.pObjectData) = (yyvsp[(1) - (2)].pObjectData);
 		}
 		else
-			(yyval.pObjectData) = (yyvsp[0].pObjectData);
+			(yyval.pObjectData) = (yyvsp[(2) - (2)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 254:
-#line 1767 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1767 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 255:
-#line 1773 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1773 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 256:
-#line 1778 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1778 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 257:
-#line 1784 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1784 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->functionDeclaration( (yyvsp[-4].pObjectData), (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->functionDeclaration( (yyvsp[(2) - (6)].pObjectData), (yyvsp[(4) - (6)].pObjectData), (yyvsp[(6) - (6)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 258:
-#line 1789 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1789 "criscript.y"
     {
  		/*ECMA4 compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_ES4DRAFT );
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->typedFunctionDeclaration( (yyvsp[-6].pObjectData), (yyvsp[-4].pObjectData), (yyvsp[0].pObjectData), (yyvsp[-1].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->typedFunctionDeclaration( (yyvsp[(2) - (8)].pObjectData), (yyvsp[(4) - (8)].pObjectData), (yyvsp[(8) - (8)].pObjectData), (yyvsp[(7) - (8)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 259:
-#line 1797 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1797 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->functionDeclaration( (yyvsp[-4].pObjectData), (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->functionDeclaration( (yyvsp[(2) - (6)].pObjectData), (yyvsp[(4) - (6)].pObjectData), (yyvsp[(6) - (6)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 260:
-#line 1802 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1802 "criscript.y"
     {
  		/*ECMA4 compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_ES4DRAFT );
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->typedFunctionDeclaration( (yyvsp[-6].pObjectData), (yyvsp[-4].pObjectData), (yyvsp[0].pObjectData), (yyvsp[-1].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->typedFunctionDeclaration( (yyvsp[(2) - (8)].pObjectData), (yyvsp[(4) - (8)].pObjectData), (yyvsp[(8) - (8)].pObjectData), (yyvsp[(7) - (8)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 261:
-#line 1810 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1810 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -4735,30 +5384,36 @@ yyreduce:
     break;
 
   case 262:
-#line 1815 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1815 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 263:
-#line 1820 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1820 "criscript.y"
     {
  		/*ECMA4 compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_ES4DRAFT );
  		CCgNodeData* node = CParser::getparser()->getCodeGen()->makeNode( CG_NODE_RESTARGS,
  														(CG_OPERATIONTYPE)0,
- 														NULL, (yyvsp[0].pObjectData) );
-		(yyvsp[-3].pObjectData)->SetSibling( node );
-		(yyval.pObjectData) = (yyvsp[-3].pObjectData);
+ 														NULL, (yyvsp[(4) - (4)].pObjectData) );
+		(yyvsp[(1) - (4)].pObjectData)->SetSibling( node );
+		(yyval.pObjectData) = (yyvsp[(1) - (4)].pObjectData);
 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 264:
-#line 1832 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1832 "criscript.y"
     {
 		//Array typed restArgs
 		
@@ -4766,58 +5421,70 @@ yyreduce:
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_ES4DRAFT );
  		CCgNodeData* node = CParser::getparser()->getCodeGen()->makeNode( CG_NODE_RESTARGS,
  														(CG_OPERATIONTYPE)0,
- 														NULL, (yyvsp[0].pObjectData) );
-		(yyvsp[-3].pObjectData)->SetSibling( node );
-		(yyval.pObjectData) = (yyvsp[-3].pObjectData);
+ 														NULL, (yyvsp[(4) - (4)].pObjectData) );
+		(yyvsp[(1) - (4)].pObjectData)->SetSibling( node );
+		(yyval.pObjectData) = (yyvsp[(1) - (4)].pObjectData);
 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 265:
-#line 1847 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1847 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 266:
-#line 1852 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1852 "criscript.y"
     {
-		(yyvsp[-2].pObjectData)->SetSibling( (yyvsp[0].pObjectData) );
-		(yyval.pObjectData) = (yyvsp[-2].pObjectData);
+		(yyvsp[(1) - (3)].pObjectData)->SetSibling( (yyvsp[(3) - (3)].pObjectData) );
+		(yyval.pObjectData) = (yyvsp[(1) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 267:
-#line 1858 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1858 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 268:
-#line 1863 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1863 "criscript.y"
     {
-		(yyvsp[-2].pObjectData)->SetSibling( (yyvsp[0].pObjectData) );
-		(yyval.pObjectData) = (yyvsp[-2].pObjectData);
+		(yyvsp[(1) - (3)].pObjectData)->SetSibling( (yyvsp[(3) - (3)].pObjectData) );
+		(yyval.pObjectData) = (yyvsp[(1) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 269:
-#line 1870 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1870 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[-1].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (3)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 270:
-#line 1875 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1875 "criscript.y"
     {
 		//For Empty statement
 		(yyval.pObjectData) = NULL;
@@ -4826,7 +5493,9 @@ yyreduce:
     break;
 
   case 271:
-#line 1882 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1882 "criscript.y"
     {
 		//CParser::getparser()->getCodeGen()->tagTheLine();
 		(yyval.pObjectData) = NULL;
@@ -4835,78 +5504,94 @@ yyreduce:
     break;
 
   case 272:
-#line 1889 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1889 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->literalConstant( (yyvsp[0].pString),
-													(yyvsp[0].iFileId),
-													(yyvsp[0].iLineNumber),
-													(yyvsp[0].iColumn) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->literalConstant( (yyvsp[(1) - (1)].pString),
+													(yyvsp[(1) - (1)].iFileId),
+													(yyvsp[(1) - (1)].iLineNumber),
+													(yyvsp[(1) - (1)].iColumn) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 273:
-#line 1898 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1898 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->integerConstant( (yyvsp[0].iValue),
-													(yyvsp[0].iFileId),
-													(yyvsp[0].iLineNumber),
-													(yyvsp[0].iColumn) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->integerConstant( (yyvsp[(1) - (1)].iValue),
+													(yyvsp[(1) - (1)].iFileId),
+													(yyvsp[(1) - (1)].iLineNumber),
+													(yyvsp[(1) - (1)].iColumn) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 274:
-#line 1907 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1907 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->floatConstant( (yyvsp[0].dValue),
-													(yyvsp[0].iFileId),
-													(yyvsp[0].iLineNumber),
-													(yyvsp[0].iColumn) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->floatConstant( (yyvsp[(1) - (1)].dValue),
+													(yyvsp[(1) - (1)].iFileId),
+													(yyvsp[(1) - (1)].iLineNumber),
+													(yyvsp[(1) - (1)].iColumn) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 275:
-#line 1916 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1916 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->identifier( (yyvsp[0].pString),
-												(yyvsp[0].iFileId),
-												(yyvsp[0].iLineNumber),
-												(yyvsp[0].iColumn) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->identifier( (yyvsp[(1) - (1)].pString),
+												(yyvsp[(1) - (1)].iFileId),
+												(yyvsp[(1) - (1)].iLineNumber),
+												(yyvsp[(1) - (1)].iColumn) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 276:
-#line 1925 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1925 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->booleanConstant( (yyvsp[0].bValue),
-													(yyvsp[0].iFileId),
-													(yyvsp[0].iLineNumber),
-													(yyvsp[0].iColumn) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->booleanConstant( (yyvsp[(1) - (1)].bValue),
+													(yyvsp[(1) - (1)].iFileId),
+													(yyvsp[(1) - (1)].iLineNumber),
+													(yyvsp[(1) - (1)].iColumn) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 277:
-#line 1933 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1933 "criscript.y"
     { CParser::getparser()->getLexer()->allowRegexLiteral( true ); ;}
     break;
 
   case 278:
-#line 1934 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1934 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->regexLiteral( (yyvsp[0].pString),
-													(yyvsp[0].iFileId),
-													(yyvsp[0].iLineNumber),
-													(yyvsp[0].iColumn) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->regexLiteral( (yyvsp[(3) - (3)].pString),
+													(yyvsp[(3) - (3)].iFileId),
+													(yyvsp[(3) - (3)].iLineNumber),
+													(yyvsp[(3) - (3)].iColumn) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 279:
-#line 1947 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1947 "criscript.y"
     {
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
  		//Do nothing for now
@@ -4915,7 +5600,9 @@ yyreduce:
     break;
 
   case 282:
-#line 1957 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1957 "criscript.y"
     {
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
 		(yyval.pObjectData) = NULL;
@@ -4923,7 +5610,9 @@ yyreduce:
     break;
 
   case 283:
-#line 1963 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1963 "criscript.y"
     {
 		(yyval.pObjectData) = NULL;
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
@@ -4931,45 +5620,55 @@ yyreduce:
     break;
 
   case 284:
-#line 1968 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1968 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 285:
-#line 1974 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1974 "criscript.y"
     {
   		/*JScript compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->ifStatement( (yyvsp[-4].pObjectData), (yyvsp[-2].pObjectData), (yyvsp[-1].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->ifStatement( (yyvsp[(3) - (7)].pObjectData), (yyvsp[(5) - (7)].pObjectData), (yyvsp[(6) - (7)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 286:
-#line 1981 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1981 "criscript.y"
     {
   		/*JScript compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->ifStatement( (yyvsp[-4].pObjectData), (yyvsp[-2].pObjectData), (yyvsp[-1].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->ifStatement( (yyvsp[(3) - (7)].pObjectData), (yyvsp[(5) - (7)].pObjectData), (yyvsp[(6) - (7)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 287:
-#line 1989 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1989 "criscript.y"
     {
   		/*JScript compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->ifStatement( (yyvsp[-3].pObjectData), (yyvsp[-1].pObjectData), (yyvsp[0].pObjectData) ); 
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->ifStatement( (yyvsp[(3) - (6)].pObjectData), (yyvsp[(5) - (6)].pObjectData), (yyvsp[(6) - (6)].pObjectData) ); 
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 288:
-#line 1997 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 1997 "criscript.y"
     {
   		/*JScript compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
@@ -4979,7 +5678,9 @@ yyreduce:
     break;
 
   case 289:
-#line 2004 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2004 "criscript.y"
     {
   		/*JScript compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
@@ -4989,389 +5690,477 @@ yyreduce:
     break;
 
   case 290:
-#line 2011 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2011 "criscript.y"
     {
   		/*JScript compatibility extension*/
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(2) - (2)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 291:
-#line 2019 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2019 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 292:
-#line 2024 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2024 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 293:
-#line 2029 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2029 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 294:
-#line 2035 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2035 "criscript.y"
     {
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->identifier( (yyvsp[0].pString),
-												(yyvsp[0].iFileId),
-												(yyvsp[0].iLineNumber),
-												(yyvsp[0].iColumn) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->identifier( (yyvsp[(1) - (1)].pString),
+												(yyvsp[(1) - (1)].iFileId),
+												(yyvsp[(1) - (1)].iLineNumber),
+												(yyvsp[(1) - (1)].iColumn) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 295:
-#line 2045 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2045 "criscript.y"
     {
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 296:
-#line 2051 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2051 "criscript.y"
     {
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 297:
-#line 2058 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2058 "criscript.y"
     {
  		CParser::getparser()->getCodeGen()->checkExtension( EXTENSION_JSCRIPT );
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->variableDeclaration( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->variableDeclaration( (yyvsp[(2) - (4)].pObjectData), (yyvsp[(4) - (4)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 298:
-#line 2078 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2078 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 299:
-#line 2083 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2083 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryPlusOperator( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryPlusOperator( (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 300:
-#line 2088 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2088 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryMinusOperator( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryMinusOperator( (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 301:
-#line 2093 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2093 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryBitwiseNotOperator( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryBitwiseNotOperator( (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 302:
-#line 2098 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2098 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryLogicalNotOperator( (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->unaryLogicalNotOperator( (yyvsp[(2) - (2)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 303:
-#line 2104 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2104 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 304:
-#line 2109 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2109 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->multiplyOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->multiplyOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 305:
-#line 2114 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2114 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->divisionOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->divisionOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 306:
-#line 2119 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2119 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->reminderOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->reminderOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 307:
-#line 2125 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2125 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 308:
-#line 2130 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2130 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->addOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->addOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 309:
-#line 2135 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2135 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->subtractOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->subtractOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 310:
-#line 2141 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2141 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 311:
-#line 2146 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2146 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->shiftLeftOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->shiftLeftOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 312:
-#line 2151 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2151 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->shiftRightOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->shiftRightOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 313:
-#line 2156 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2156 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->shiftRightUnsignedOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->shiftRightUnsignedOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 314:
-#line 2162 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2162 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 315:
-#line 2167 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2167 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_GREATER );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_GREATER );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 316:
-#line 2172 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2172 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_GREATEREQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_GREATEREQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 317:
-#line 2177 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2177 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_LESS );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_LESS );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 318:
-#line 2182 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2182 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_LESSEQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_LESSEQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 319:
-#line 2188 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2188 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 320:
-#line 2193 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2193 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_EQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_EQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 321:
-#line 2198 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2198 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_NOTEQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_NOTEQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 322:
-#line 2203 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2203 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_STRICTEQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_STRICTEQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 323:
-#line 2208 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2208 "criscript.y"
     {
-		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData), CG_STRICTNOTEQUAL );
+		(yyval.pObjectData)= CParser::getparser()->getCodeGen()->cmpOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData), CG_STRICTNOTEQUAL );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 324:
-#line 2214 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2214 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 325:
-#line 2219 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2219 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseAndOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseAndOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 326:
-#line 2225 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2225 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 327:
-#line 2230 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2230 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseXorOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseXorOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 328:
-#line 2236 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2236 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 329:
-#line 2241 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2241 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseOrOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->bitwiseOrOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 330:
-#line 2247 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2247 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 331:
-#line 2252 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2252 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->logicalAndOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->logicalAndOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 332:
-#line 2258 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2258 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 333:
-#line 2263 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2263 "criscript.y"
     {
-		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->logicalOrOperator( (yyvsp[-2].pObjectData), (yyvsp[0].pObjectData) );
+		(yyval.pObjectData) = CParser::getparser()->getCodeGen()->logicalOrOperator( (yyvsp[(1) - (3)].pObjectData), (yyvsp[(3) - (3)].pObjectData) );
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
   case 334:
-#line 2269 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1455 of yacc.c  */
+#line 2269 "criscript.y"
     {
-		(yyval.pObjectData) = (yyvsp[0].pObjectData);
+		(yyval.pObjectData) = (yyvsp[(1) - (1)].pObjectData);
 		CParser::getparser()->getLexer()->debugRecentlyReduced( __LINE__ );
 	;}
     break;
 
 
+
+/* Line 1455 of yacc.c  */
+#line 6155 "criscriptparser.cpp"
       default: break;
     }
+  YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
 
-/* Line 1126 of yacc.c.  */
-#line 5366 "..\\..\\..\\..\\src\\parser\\criscriptparser.cpp"
-
-  yyvsp -= yylen;
-  yyssp -= yylen;
-
-
+  YYPOPSTACK (yylen);
+  yylen = 0;
   YY_STACK_PRINT (yyss, yyssp);
 
   *++yyvsp = yyval;
-
 
   /* Now `shift' the result of the reduction.  Determine what state
      that goes to, based on the state we popped back to and the rule
@@ -5396,133 +6185,65 @@ yyerrlab:
   if (!yyerrstatus)
     {
       ++yynerrs;
-#if YYERROR_VERBOSE
-      yyn = yypact[yystate];
-
-      if (YYPACT_NINF < yyn && yyn < YYLAST)
-	{
-	  int yytype = YYTRANSLATE (yychar);
-	  YYSIZE_T yysize0 = yytnamerr (0, yytname[yytype]);
-	  YYSIZE_T yysize = yysize0;
-	  YYSIZE_T yysize1;
-	  int yysize_overflow = 0;
-	  char *yymsg = 0;
-#	  define YYERROR_VERBOSE_ARGS_MAXIMUM 5
-	  char const *yyarg[YYERROR_VERBOSE_ARGS_MAXIMUM];
-	  int yyx;
-
-#if 0
-	  /* This is so xgettext sees the translatable formats that are
-	     constructed on the fly.  */
-	  YY_("syntax error, unexpected %s");
-	  YY_("syntax error, unexpected %s, expecting %s");
-	  YY_("syntax error, unexpected %s, expecting %s or %s");
-	  YY_("syntax error, unexpected %s, expecting %s or %s or %s");
-	  YY_("syntax error, unexpected %s, expecting %s or %s or %s or %s");
-#endif
-	  char *yyfmt;
-	  char const *yyf;
-	  static char const yyunexpected[] = "syntax error, unexpected %s";
-	  static char const yyexpecting[] = ", expecting %s";
-	  static char const yyor[] = " or %s";
-	  char yyformat[sizeof yyunexpected
-			+ sizeof yyexpecting - 1
-			+ ((YYERROR_VERBOSE_ARGS_MAXIMUM - 2)
-			   * (sizeof yyor - 1))];
-	  char const *yyprefix = yyexpecting;
-
-	  /* Start YYX at -YYN if negative to avoid negative indexes in
-	     YYCHECK.  */
-	  int yyxbegin = yyn < 0 ? -yyn : 0;
-
-	  /* Stay within bounds of both yycheck and yytname.  */
-	  int yychecklim = YYLAST - yyn;
-	  int yyxend = yychecklim < YYNTOKENS ? yychecklim : YYNTOKENS;
-	  int yycount = 1;
-
-	  yyarg[0] = yytname[yytype];
-	  yyfmt = yystpcpy (yyformat, yyunexpected);
-
-	  for (yyx = yyxbegin; yyx < yyxend; ++yyx)
-	    if (yycheck[yyx + yyn] == yyx && yyx != YYTERROR)
-	      {
-		if (yycount == YYERROR_VERBOSE_ARGS_MAXIMUM)
-		  {
-		    yycount = 1;
-		    yysize = yysize0;
-		    yyformat[sizeof yyunexpected - 1] = '\0';
-		    break;
-		  }
-		yyarg[yycount++] = yytname[yyx];
-		yysize1 = yysize + yytnamerr (0, yytname[yyx]);
-		yysize_overflow |= yysize1 < yysize;
-		yysize = yysize1;
-		yyfmt = yystpcpy (yyfmt, yyprefix);
-		yyprefix = yyor;
-	      }
-
-	  yyf = YY_(yyformat);
-	  yysize1 = yysize + yystrlen (yyf);
-	  yysize_overflow |= yysize1 < yysize;
-	  yysize = yysize1;
-
-	  if (!yysize_overflow && yysize <= YYSTACK_ALLOC_MAXIMUM)
-	    yymsg = (char *) YYSTACK_ALLOC (yysize);
-	  if (yymsg)
-	    {
-	      /* Avoid sprintf, as that infringes on the user's name space.
-		 Don't have undefined behavior even if the translation
-		 produced a string with the wrong number of "%s"s.  */
-	      char *yyp = yymsg;
-	      int yyi = 0;
-	      while ((*yyp = *yyf))
-		{
-		  if (*yyp == '%' && yyf[1] == 's' && yyi < yycount)
-		    {
-		      yyp += yytnamerr (yyp, yyarg[yyi++]);
-		      yyf += 2;
-		    }
-		  else
-		    {
-		      yyp++;
-		      yyf++;
-		    }
-		}
-	      yyerror (yymsg);
+#if ! YYERROR_VERBOSE
+      yyerror (YY_("syntax error"));
+#else
+      {
+	YYSIZE_T yysize = yysyntax_error (0, yystate, yychar);
+	if (yymsg_alloc < yysize && yymsg_alloc < YYSTACK_ALLOC_MAXIMUM)
+	  {
+	    YYSIZE_T yyalloc = 2 * yysize;
+	    if (! (yysize <= yyalloc && yyalloc <= YYSTACK_ALLOC_MAXIMUM))
+	      yyalloc = YYSTACK_ALLOC_MAXIMUM;
+	    if (yymsg != yymsgbuf)
 	      YYSTACK_FREE (yymsg);
-	    }
-	  else
-	    {
-	      yyerror (YY_("syntax error"));
+	    yymsg = (char *) YYSTACK_ALLOC (yyalloc);
+	    if (yymsg)
+	      yymsg_alloc = yyalloc;
+	    else
+	      {
+		yymsg = yymsgbuf;
+		yymsg_alloc = sizeof yymsgbuf;
+	      }
+	  }
+
+	if (0 < yysize && yysize <= yymsg_alloc)
+	  {
+	    (void) yysyntax_error (yymsg, yystate, yychar);
+	    yyerror (yymsg);
+	  }
+	else
+	  {
+	    yyerror (YY_("syntax error"));
+	    if (yysize != 0)
 	      goto yyexhaustedlab;
-	    }
-	}
-      else
-#endif /* YYERROR_VERBOSE */
-	yyerror (YY_("syntax error"));
+	  }
+      }
+#endif
     }
 
 
 
   if (yyerrstatus == 3)
     {
-      /* If just tried and failed to reuse look-ahead token after an
+      /* If just tried and failed to reuse lookahead token after an
 	 error, discard it.  */
 
       if (yychar <= YYEOF)
-        {
+	{
 	  /* Return failure if at end of input.  */
 	  if (yychar == YYEOF)
 	    YYABORT;
-        }
+	}
       else
 	{
-	  yydestruct ("Error: discarding", yytoken, &yylval);
+	  yydestruct ("Error: discarding",
+		      yytoken, &yylval);
 	  yychar = YYEMPTY;
 	}
     }
 
-  /* Else will try to reuse look-ahead token after shifting the error
+  /* Else will try to reuse lookahead token after shifting the error
      token.  */
   goto yyerrlab1;
 
@@ -5535,11 +6256,14 @@ yyerrorlab:
   /* Pacify compilers like GCC when the user code never invokes
      YYERROR and the label yyerrorlab therefore never appears in user
      code.  */
-  if (0)
+  if (/*CONSTCOND*/ 0)
      goto yyerrorlab;
 
-yyvsp -= yylen;
-  yyssp -= yylen;
+  /* Do not reclaim the symbols of the rule which action triggered
+     this YYERROR.  */
+  YYPOPSTACK (yylen);
+  yylen = 0;
+  YY_STACK_PRINT (yyss, yyssp);
   yystate = *yyssp;
   goto yyerrlab1;
 
@@ -5569,19 +6293,17 @@ yyerrlab1:
 	YYABORT;
 
 
-      yydestruct ("Error: popping", yystos[yystate], yyvsp);
-      YYPOPSTACK;
+      yydestruct ("Error: popping",
+		  yystos[yystate], yyvsp);
+      YYPOPSTACK (1);
       yystate = *yyssp;
       YY_STACK_PRINT (yyss, yyssp);
     }
 
-  if (yyn == YYFINAL)
-    YYACCEPT;
-
   *++yyvsp = yylval;
 
 
-  /* Shift the error token. */
+  /* Shift the error token.  */
   YY_SYMBOL_PRINT ("Shifting", yystos[yyn], yyvsp, yylsp);
 
   yystate = yyn;
@@ -5602,7 +6324,7 @@ yyabortlab:
   yyresult = 1;
   goto yyreturn;
 
-#ifndef yyoverflow
+#if !defined(yyoverflow) || YYERROR_VERBOSE
 /*-------------------------------------------------.
 | yyexhaustedlab -- memory exhaustion comes here.  |
 `-------------------------------------------------*/
@@ -5613,24 +6335,35 @@ yyexhaustedlab:
 #endif
 
 yyreturn:
-  if (yychar != YYEOF && yychar != YYEMPTY)
+  if (yychar != YYEMPTY)
      yydestruct ("Cleanup: discarding lookahead",
 		 yytoken, &yylval);
+  /* Do not reclaim the symbols of the rule which action triggered
+     this YYABORT or YYACCEPT.  */
+  YYPOPSTACK (yylen);
+  YY_STACK_PRINT (yyss, yyssp);
   while (yyssp != yyss)
     {
       yydestruct ("Cleanup: popping",
 		  yystos[*yyssp], yyvsp);
-      YYPOPSTACK;
+      YYPOPSTACK (1);
     }
 #ifndef yyoverflow
   if (yyss != yyssa)
     YYSTACK_FREE (yyss);
 #endif
-  return yyresult;
+#if YYERROR_VERBOSE
+  if (yymsg != yymsgbuf)
+    YYSTACK_FREE (yymsg);
+#endif
+  /* Make sure YYID is used.  */
+  return YYID (yyresult);
 }
 
 
-#line 2275 "..\\..\\..\\..\\src\\parser\\criscript.y"
+
+/* Line 1675 of yacc.c  */
+#line 2275 "criscript.y"
 
 /********************************************************************************/
 /* Code goes here */

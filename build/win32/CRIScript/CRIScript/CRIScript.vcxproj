@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>CriScript</ProjectName>
+    <ProjectGuid>{81BA7C4C-3ACE-4B1F-BA96-EBA234DEB886}</ProjectGuid>
+    <RootNamespace>CRIScript</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command />
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../src/boost;../../../../inc;../../../../inc/win32;../../../../src/parser;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;BOOST_REGEX_NO_LIB;BOOST_NO_EXCEPTIONS;_SECURE_SCL=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling />
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName)d.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command />
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../../../src/boost;../../../../inc;../../../../inc/win32;../../../../src/parser;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;BOOST_REGEX_NO_LIB;BOOST_NO_EXCEPTIONS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">OldStyle</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinArrayObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinBooleanObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinDateObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinDateObjectTimeZone.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinErrorObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinFunctionObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinMathObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinNumberObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinObjectObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinRegexObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinStringObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectForIn.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectGlobal.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectInstanceOf.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectLoadLiteral.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectObjectAccess.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectPropertyAccess.cpp" />
+    <ClCompile Include="..\..\..\..\src\BuiltInObject\cil\cilBuiltinSystemObjectStrictCompare.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilArgumentListStack.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilArrayLiteral.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilBuiltinObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilCodeGen.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilCodegenManagement.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilConditionalExpression.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilConstantBoolean.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilConstantFloat.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilConstantInteger.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilConstantLiteral.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilConstantRegex.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilExceptionHandling.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilExtensionManagement.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilFunctionCall.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilFunctionDeclaration.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilFunctionRet.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilFunctionVariables.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilIdentifier.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilLabel.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilLinkage.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilMetadata.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilMultipassControl.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilNodeTree.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilObjectInformation.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilObjectLiteral.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOpcode.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorAdd.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorBitwiseAnd.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorBitwiseOr.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorBitwiseShiftLeft.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorBitwiseShiftRight.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorBitwiseShiftRightUnsigned.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorBitwiseXor.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorCompare.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorCompareStrict.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorDivision.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorIn.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorInstanceOf.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorLogicalAnd.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorLogicalOr.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorMultiply.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorNew.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorReminder.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorSubtract.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryBitwiseNot.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryDelete.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryIncrement.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryLogicalNot.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryMinus.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryPlus.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryTypeof.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOperatorUnaryVoid.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilProperty.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilScope.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementBreak.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementExpression.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementFor.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementForIn.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementIf.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementSwitch.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilStatementWith.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilSymbolInfo.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilTemporaryVariables.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilVariableAssignment.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilVariableDeclaration.cpp" />
+    <ClCompile Include="..\..\..\..\src\Parser\criscriptparser.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOptimizerConditionalBranch.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOptimizerRedandantDup.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilOptimizerSfldIncrement.cpp" />
+    <ClCompile Include="..\..\..\..\src\CodeGen\cil\cilPeepholeOptimizer.cpp" />
+    <ClCompile Include="..\..\..\..\src\Debugger\cil\cilDebuggerDisasm.cpp" />
+    <ClCompile Include="..\..\..\..\src\Debugger\cil\cilDebuggerDump.cpp" />
+    <ClCompile Include="..\..\..\..\src\Debugger\cil\cilDebuggerVMInterface.cpp" />
+    <ClCompile Include="..\..\..\..\src\Parser\Error.cpp" />
+    <ClCompile Include="..\..\..\..\src\Parser\filestreamlexer.cpp" />
+    <ClCompile Include="..\..\..\..\src\Parser\Lexer.cpp" />
+    <ClCompile Include="..\..\..\..\src\Parser\onmemorylexer.cpp" />
+    <ClCompile Include="..\..\..\..\src\Parser\Parser.cpp" />
+    <ClCompile Include="..\..\..\..\src\Parser\Variable.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVM.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMArgumentList.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMBind.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMConversion.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMDebugInfo.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMEvalStack.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMExceptionHandling.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMGarbageCollector.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMHandler.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMILPool.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMInitialization.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMInvokeMethod.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMLocalVariable.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMMiscAPI.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMObjectCreation.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorAdd.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBeq.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBge.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBgt.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBitwiseAnd.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBitwiseNot.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBitwiseOr.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBitwiseXor.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBle.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBlt.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBne.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBrFalse.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorBrTrue.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorCall.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorCeq.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorCgt.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorClt.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorDivision.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorExtCge.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorExtCle.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorExtCne.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorIncDec.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorMultiply.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorNeg.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorReminder.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorShl.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorShr.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorShrUn.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMOperatorSubtract.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMPrototypeObject.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMStaticField.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMThreadedDispatcher.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\cil\cilVMToken.cpp" />
+    <ClCompile Include="..\..\..\..\src\VM\Win32\StopWatch.cpp" />
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\c_regex_traits.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\cpp_regex_traits.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\cregex.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\fileiter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\icu.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\instances.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\posix_api.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\regex.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\regex_debug.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\regex_raw_buffer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\regex_traits_defaults.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\static_mutex.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\usinstances.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\w32_regex_traits.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\wc_regex_traits.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\wide_posix_api.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\boost\libs\regex\src\winstances.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\..\src\Parser\criscript.y">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\VM\cil\cilVMBranchMacro.h" />
+    <ClInclude Include="..\..\..\..\inc\criscript.h" />
+    <ClInclude Include="..\..\..\..\inc\stdafx.h" />
+    <ClInclude Include="..\..\..\..\inc\versions.h" />
+    <ClInclude Include="..\..\..\..\inc\cilErrorDef_English.h" />
+    <ClInclude Include="..\..\..\..\inc\Error.h" />
+    <ClInclude Include="..\..\..\..\inc\lexer.h" />
+    <ClInclude Include="..\..\..\..\inc\stdint.h" />
+    <ClInclude Include="..\..\..\..\inc\Variable.h" />
+    <ClInclude Include="..\..\..\..\inc\cilCodegen.h" />
+    <ClInclude Include="..\..\..\..\inc\cilOpcode.h" />
+    <ClInclude Include="..\..\..\..\inc\icodegen.h" />
+    <ClInclude Include="..\..\..\..\inc\parser.h" />
+    <ClInclude Include="..\..\..\..\inc\cilVm.h" />
+    <ClInclude Include="..\..\..\..\inc\vmRuntimeError.h" />
+    <ClInclude Include="..\..\..\..\inc\Win32\StopWatch.h" />
+    <ClInclude Include="..\..\..\..\inc\cilBuiltinObject.h" />
+    <ClInclude Include="..\..\..\..\inc\cilDebugger.h" />
+    <ClInclude Include="..\..\..\..\inc\IDebugger.h" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\basic_regex.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\basic_regex_creator.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\basic_regex_parser.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\c_regex_traits.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\char_regex_traits.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\cpp_regex_traits.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\cregex.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\error_type.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\fileiter.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\instances.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\iterator_category.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\iterator_traits.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\match_flags.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\match_results.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\mem_block_cache.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\perl_matcher.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\perl_matcher_common.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\perl_matcher_non_recursive.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\perl_matcher_recursive.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\primary_transform.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\protected_call.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regbase.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_cstring.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_format.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_fwd.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_grep.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_iterator.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_kmp.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_match.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_merge.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_raw_buffer.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_replace.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_search.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_split.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_stack.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_token_iterator.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_traits.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_traits_defaults.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\regex_workaround.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\states.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\sub_match.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\syntax_type.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\u32regex_iterator.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\u32regex_token_iterator.hpp" />
+    <ClInclude Include="..\..\..\..\src\boost\boost\regex\v4\w32_regex_traits.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

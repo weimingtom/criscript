@@ -33,6 +33,12 @@
 #include <functional>       // std::less
 #include <new>              // std::bad_alloc
 #include <typeinfo>         // std::type_info in get_deleter
+#ifdef _MSC_VER
+namespace std {
+	typedef ::type_info type_info;
+}
+#endif
+
 
 namespace boost
 {

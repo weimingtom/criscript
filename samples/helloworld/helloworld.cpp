@@ -32,7 +32,8 @@ using namespace stdext;
 //----------------------------------------------------------------
 //print a text
 wchar_t strScript[] = L"\
-	print( \"Hello World\" );\
+	function print2(s) {print(s);}\n \
+	print2( \"Hello World\" );\
 ";
 
 

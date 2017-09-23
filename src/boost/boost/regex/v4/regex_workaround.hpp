@@ -138,7 +138,7 @@ namespace boost{ namespace re_detail{
       OutputIterator dest
    )
    {
-      return stdext::unchecked_copy(first, last, dest);
+      return std::copy(first, last, dest);
    }
    template<class InputIterator1, class InputIterator2>
    inline bool equal(
@@ -147,7 +147,7 @@ namespace boost{ namespace re_detail{
       InputIterator2 with
    )
    {
-      return stdext::unchecked_equal(first, last, with);
+      return std::equal(first, last, with);
    }
 
    // use safe versions of strcpy etc:
